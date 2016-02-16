@@ -1,0 +1,148 @@
+﻿<!doctype html>
+<html lang="us">
+<head>
+    <meta charset="utf-8">
+    <title>Form Builder and Generator for Idiligo</title>
+    <link href="css/mainStyles.css" type="text/css" rel="stylesheet" />
+    <link href="css/base/jquery-ui-1.9.2.custom.css" rel="stylesheet">
+    <script src="js/jquery-1.8.3.js"></script>
+    <script src="js/jquery-ui-1.9.2.custom.js"></script>
+    <!-- ##################################################################################################################
+        1.- In dit project zijn een jQuery UI library opgenomen. daarom zijn de extra folders als development-bundle, script
+            met daarin de jQuery versies toegevoegd.
+        2.- Verder zijn er al js files voor algemeen.jquery.js (in de <head>) en functional.js toepassingen onderaan de <body>
+         ######################################################################################################################-->
+    <!--<script src="js/algemeen.jquery.js"></script>-->
+</head>
+
+<body>
+    <header>
+        <div id="topMenu">
+            <div id="logo">
+                <a href="#"><img src="images/idiligo-logo.png" alt="Naar de idiligo site" /></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">How it Works</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Snippets</a></li>
+                    <li><a href="#">Pricing &amp; Modules</a></li>
+                    <li><a href="#">Sign Up</a></li>
+                    <li><a href="#">Search</a></li>
+                </ul>
+            </nav>
+            <div id="signUp">
+                <ul>
+                    <li class="logInButton"><a href="#">Log In</a></li>
+                    <li class="signUpButton"><a href="#">Sign Up</a></li>
+                </ul>
+            </div>
+        </div><!--End div topMenu-->
+        <div id="titleBanner"></div><!--End div titleBanner-->
+        <H1>DRAG AND DROP COMPONENTES BELOW TO BUILD YOUR FORM</H1>
+        <div id="banner">
+            <H1>DRAG AND DROP (D&D) COMPONENTS BELOW TO BUILD YOUR FORM</H1>
+        </div>
+
+    </header>
+    <main>
+        <!--Article is de Parent div voor de Drag & Drop Area. Alles komt hier in-->
+        <article>
+            <h3>Drag &Aacute; Drop componenten</h3><!--Heading for main Drag & Drop (D&D) Form componenten die naar de Drop Area gesleept worden -->
+            <section id="dragSection">
+                <!--dragSection bevat Form componenten die naar de Drop Area gesleept worden -->
+                <h3>From selctie</h3>
+
+                <nav id="tagNav">
+                    <!--tagNav is het  navigatie voor de form elementen-->
+                    <ul>
+                        <li><a href="#">Input</a></li>
+                        <li><a href="#">Radios / Cheackboxes</a></li>
+                        <li><a href="#">Selection</a></li>
+                        <li><a href="#">Buttons</a></li>
+                        <li><a href="#">View HTML</a></li>
+                        <li><a href="#">Search</a></li>
+                    </ul>
+                </nav><!--end tagNav div -->
+                <div id="compContainer">
+                    <!--Componenten lijst selecteer baar aan de hand van tagNav menu-->
+                    <!--- Hier onder tags uitschrijven met alle mogelijk attributen
+            type="text" label="Vul hier in" name="adress" placeholder="iets van tekst" required="" enz..enz Hier onder is ook maar een weergave enstaat nog iet vast-->
+                    <form>Text Input</form>
+                    <form>Password Input</form>
+                    <form>Search Input</form>
+                    <form>Prepended Text </form>
+                    <form>Appended Text </form>
+                    <form>Prepended Checkbox </form>
+                    <form>Appended Checkbox </form>
+                    <form>Button Drop down </form>
+                    <form>Text  Area </form>
+
+
+                    <!-- #############################################################################################################################################
+                         VOORBEELD: HOE DE BOVENSTAANDE FORMELEMENTEN INGEVULT KUNNEN WORDEN MAAR...hoe we de totale form elementen, attributen en waarden
+                          moeten  toepassen komt later
+                        #############################################################################################################################################-->
+                    <!-- #############################################################################################################################################
+                <form>
+                    <fieldset>
+                        <legend>Input Text</legend>
+                        <input>Text Input/>
+                        <input>Password Input>
+                        <input>Search Input>
+                        <input>Prepended Text >
+                        <input>Appended Text>
+                        <input>Prepended Checkbox >
+                        <input>Appended Checkboxm>
+                        <input>Button Drop down>
+                        <input>Text  Area>
+                    </fieldset>
+                </form>
+                #############################################################################################################################################-->
+
+                </div><!--end div compContainer -->
+            </section>
+            <!--Hier onder begint het rechter Drop Section -->
+            <section id="dropSection">
+                <h3>You Form</h3><!--heading dropSection -->
+                <div id="dropHotSpot">
+                    <h3>Form name</h3>
+                    <div id="hotSpot">
+
+                    </div><!--end div hotSpot -->
+
+                </div><!--end div dropHotSpot -->
+
+
+            </section><!--end div compContainer -->
+        </article>
+        <section></section>
+
+    </main>
+    <footer>
+        <!--Ik heb de footer voorlopig simple gehouden er kunnen nog contactlijst, adreslijst partnersinfo bijkomen. maar dat is niet zo belangrijk -->
+        <ul>
+            <li><a href="#">For users</a></li>
+            <li><a href="#">For Developers</a></li>
+            <li><a href="#">For Partnes</a></li>
+            <li><a href="#">Privacy and Security</a></li>
+            <li><a href="#">Terms and Conditions</a></li>
+            <li><a href="#">About us</a></li>
+        </ul>
+        <div id="socialMedia">
+            <!--Of je hier een <ul><li> van maakt moet je zelf weten -->
+            <!--de social media icons staan in de images folder en als je de icons als background gebruikt hoef je ze alleen in CSS te laden.-->
+            <a class="linkedin" target="_blank" href="http://www.linkedin.com/company/idiligo"></a>
+            <a class="twitter" target="_blank" href="https://twitter.com/idiligo"></a>
+            <a class="facebook" target="_blank" href="http://www.facebook.com/pages/idiligo/175179179210750"></a>
+            <a class="chat" target="_blank" href="https://www.propulsion4u.nl/booking/idiligo_bookings.asp"></a>
+        </div>
+
+    </footer>
+
+
+    <script src="js/functional.js"></script>
+    <script src="js/external.js"></script>
+
+</body>
+</html>
