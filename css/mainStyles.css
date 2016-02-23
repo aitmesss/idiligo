@@ -4,7 +4,7 @@ html {
   box-sizing: border-box;
 }
 *, *:before, *:after {
-   -webkit-box-sizing: inherit;
+   -webkit-box-sizing: inherit; /* commentaar */
   -moz-box-sizing: inherit;
   box-sizing: inherit;
 }
