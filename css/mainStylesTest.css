@@ -61,10 +61,12 @@ hr {
 }
 
 #titleBanner {
-    height:15%;
-    width:100%;
-    background-color:gray;
-    float:left;
+    height: 3em;
+    width: 100%;
+    background-color: gray;
+    float: left;
+    /* padding: 0.8em; */
+    line-height: 3em;
 }
 #banner {
     height:15%;
@@ -100,10 +102,12 @@ article {
     }
 /*Here begins CSS for the  dropSection DIV */
 #dropSection {
-    width:50%;
-    padding:2em;
-     border:1px solid #808;
-     float:left;
+    width: 50%;
+    min-height: 457px;
+    padding: 2em;
+    border: 1px solid #808;
+    float: left;
+    margin-bottom: 1.2em;
 }
 
 #compContainer {
