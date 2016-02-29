@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Drag'n'Drop</title>
+  <link href="../css/site.css" rel="stylesheet">
+</head>
+
+<body>
+  
+  <header>
+      <hgroup>
+	    <h1><img src="../img/idiligo-logo.png" ></h1>
+		<h2>Create your own script and contact the world</h2>
+	  </hgroup>
+  </header>
+  
+	
+	<div id="targetDiv" class="droppedFields" ondrop="drop(event)" ondragover="allowDrop(event)"></div>	
+	<article class="tabs">
+
+		<section id="tab1">
+			<h2><a href="#tab1">Components</a></h2>
+			<hr>
+			<p>Drag a Component and drop it on the right pannel</p>
+			<hr>
+			<label id="srcLabel" class="targetLabel"   draggable="true" ondragstart="drag(event)">name of the label</label>
+			<input id="srcInput" class="targetInput" type="text" value="invoer veld" draggable="true" ondragstart="drag(event)"    height="200px" width="200px" />
+			<br><br><br><hr>
+		    
+			<label id="srcLabel" class="targetLabel"   draggable="true" ondragstart="drag(event)">Phone Number</label>
+			<input type="tel" id="srcInput"  class="targetInput"  value="Your Phone Number" draggable="true" ondragstart="drag(event)" required>
+			<br><br><br><hr>
+			<label id="srcLabel" class="targetLabel"   draggable="true" ondragstart="drag(event)">Email address</label>
+			<input id="srcEmail" class="targetEmail" type="email" value="Your Email Address" draggable="true" ondragstart="drag(event)" required>
+			<br><br><br><hr>
+			<input type="button" id="srcButton"  class="targetButton"  draggable="true" ondragstart="drag(event)" value= "Submit Buttom"/>
+		    
+			<br><br><br><hr>
+			<input type="checkbox" id="srcCheckbox01"  class="targetCB" checked="checked" draggable="true" ondragstart="drag(event)"/>
+			 <input type="checkbox" id="srcCheckbox02"  class="targetCB" checked="checked" draggable="true" ondragstart="drag(event)"/>
+			 <input type="checkbox" id="srcCheckbox03"  class="targetCB" checked="checked" draggable="true" ondragstart="drag(event)"/>
+				<select name="fbModula" id="fbModSelectionMudy" size="1" onchange="reviewModAndTakeAwaysMudy(this.value)">
+					<option value="0" selected>(please select one or more:)</option>
+					<option value="01">1</option>
+					<option value="02">2</option>
+					<option value="03">3</option>
+					<option value="04">4</option>
+					<option value="05">5</option>
+					<option value="06">6</option>	
+				</select>
+			<hr><input type="radio" id="srcRadio01"  class="targetRadio"  draggable="true" ondragstart="drag(event)" checked="checked"/>
+			 <input type="radio" id="srcRadio02"  class="targetRadio"  draggable="true" ondragstart="drag(event)" />
+			 <input type="radio" id="srcRadio02"  class="targetRadio"  draggable="true" ondragstart="drag(event)" />
+			 <select name="fbModula" id="fbModSelectionMudy" size="1" onchange="reviewModAndTakeAwaysMudy(this.value)">
+					<option value="0" selected>(please select one or more:)</option>
+					<option value="01">1</option>
+					<option value="02">2</option>
+					<option value="03">3</option>
+					<option value="04">4</option>
+					<option value="05">5</option>
+					<option value="06">6</option>
+			 </select>
+			 <hr>
+			 <textarea  id="srcTxtA"  class="targetTxtA" draggable="true" ondragstart="drag(event)"  cols="20" rows="2">Add your message here</textarea>
+			 <input type="number" id="srcNumber"  class="targetNumber" draggable="true" ondragstart="drag(event)" min="1" max="50" value="10">
+			 <hr>
+	         <input type="date" id="srcDate"  class="targetDate"  draggable="true" ondragstart="drag(event)" value="drag en drop me"/>
+		     <input id="srcDate"  type="datetime-local" class="targetDate"  draggable="true" ondragstart="drag(event)" value="drag en drop me">
+			 <input id="srcDateTime"  type="datetime" class="targetDateTime"  draggable="true" ondragstart="drag(event)" value="datetime: werkt niet!">
+			 <br><hr>
+			 <select  id="srcSelect" class="targetSelect"size="1"  draggable="true" ondragstart="drag(event)" >
+				<option value="0" selected>(please select one or more choice from the list:)</option>
+				<option value="01">choice 1</option>
+				<option value="02">choice 2</option>
+				<option value="03">choice 3</option>
+				<option value="04">choice 4</option>
+				<option value="05">choice 5</option>
+				<option value="06">choice 6</option>
+				<option value="07">choice 7</option>
+				<option value="08">choice 8</option>
+				<option value="09">choice 9</option>
+				<option value="10">choice 10</option>
+				<option value="11">choice 11</option>
+				<option value="12">choice 12</option>
+		 </select>
+		 <br><hr>
+		 <input id="srcRange" class="targetRange"type="range" min="1" max="100" value="0" draggable="true" ondragstart="drag(event)" value="Your skill level in HTML">
+		 <br><hr>
+	    </section>
+	
+	<section id="tab2">
+		<h2><a href="#tab2">Forms</a></h2>
+		<hr>
+		<p>Drag a Form and drop it on the right pannel</p>
+		<hr>
+		<form> 
+		   <fieldset>   
+		     <legend > Contact us  </legend>     
+		   <ul>   
+		   <li>     
+			   <label><strong>Name</strong><br />       
+				 <input type="text"/>    
+			   </label> 
+               		   
+		   </li>   
+		   <li>
+		     <label> 
+              Telephone<br />
+			  <input type="text"/>     
+			 </label>   
+		   </li>   
+		   <li>     
+		     <label>Email Address<br />       
+		       <input type="text" name="Email" />     
+		     </label>   
+		   </li>   
+		   <li>     
+			   <label >       
+			   <strong>Message</strong><br />       
+			   <textarea         cols="20" rows="3">Add your message here </textarea> 
+			   </label>   
+			</li> 
+		  </ull>		   
+			   <input type="submit" value="Send" /> 
+		  </fieldset>
+		</form> 
+		 <br><hr>
+		 <img src="../img/form7.gif" id="srcImg03" class="targetImg03"   draggable="true" ondragstart="drag(event)" >
+		 <img src="../img/profiel.png" id="srcImg04" class="targetImg04" width="300px" height="200px"  draggable="true" ondragstart="drag(event)" >
+		<br><hr>
+	</section>
+	<section id="tab3">
+		<h2><a href="#tab3">Images</a></h2>
+		<hr>
+		<p>Drag an Image and drop it on the right pannel</p>
+		<hr>
+		<label id="srcLabel" class="targetLabel"   draggable="true" ondragstart="drag(event)">Color</label>
+		<input id="srcColor"  type="color" class="targetColor"  draggable="true" ondragstart="drag(event)" value="drag en drop me">
+	    <br><br><br><br>
+		<hr>
+		<img src="../img/idiligo-logo.png" id="srcImg01" class="targetImg01"   draggable="true" ondragstart="drag(event)" >
+		<br><hr>
+		<img src="../img/language.png" id="srcImg02" class="targetImg02"   draggable="true" ondragstart="drag(event)" >
+		<br><hr>
+	</section>	
+	<section id="tab4">
+		<h2><a href="#tab4">XML</a></h2>
+		<hr>
+		<p>XML Example.</p>
+		<br><hr>
+		<img src="../img/xmlEx.jpg" id="srcImg05" class="targetImg05"  width="500px" height="500px" draggable="true" ondragstart="drag(event)" >
+		<br><hr>
+	</section>	
+	<section id="tab5">
+		<h2><a href="#tab5">HTML</a></h2>
+		<p>This content appears on tab 5.</p>
+	</section>	
+
+
+</article>
+
+	  
+	
+	
+  
+  <footer id="foot01">	
+   <p>&copy CO3Logie BRM3 Team  2016</p>" 
+   <!--nav id="nav02"></nav-->  
+  </footer>
+  <script src="../js/site.js"></script>
+  
+</body>
+</html>
