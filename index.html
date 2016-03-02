@@ -5,9 +5,15 @@
     <title>Form Builder and Generator for Idiligo</title>
     <!-- <link href="css/mainStyles.css" type="text/css" rel="stylesheet" />-->
     <link href="css/mainStylesTest.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <link href="css/base/jquery-ui-1.9.2.custom.css" rel="stylesheet">
     <script src="js/jquery-1.8.3.js"></script>
     <script src="js/jquery-ui-1.9.2.custom.js"></script>
+    <script>
+  $(function() {
+    $( ".tabMenu" ).tabs();
+  });
+    </script>
     <!--
         <script type="text/javascript">
         google.load("jquery", "1.3.2");
@@ -70,49 +76,52 @@
                 <nav id="tagNav">
                     <!--tagNav is het  navigatie voor de form elementen-->
                     <ul>
-                        <li><a href="#">Input</a></li>
-                        <li><a href="#">Radios / Cheackboxes</a></li>
-                        <li><a href="#">Selection</a></li>
-                        <li><a href="#">Buttons</a></li>
-                        <li><a href="#">View HTML</a></li>
-                        <li><a href="#">Search</a></li>
+                        <li><a href=".tabMenu-1">Input</a></li>
+                        <li><a href=".tabMenu-2">Radios / Cheackboxes</a></li>
+                        <li><a href=".tabMenu-3">Selection</a></li>
+                        <li><a href=".tabMenu-4">Buttons</a></li>
+                        <li><a href=".tabMenus-5">View HTML</a></li>
+                        <li><a href=".tabMenu-6">Search</a></li>
                     </ul>
                 </nav><!--end tagNav div -->
                 <div id="compContainer">
                     <!--Componenten lijst selecteer baar aan de hand van tagNav menu-->
                     <!--- Hier onder tags uitschrijven met alle mogelijk attributen
-                    type="text" label="Vul hier in" name="adress" placeholder="iets van tekst" required="" enz..enz Hier onder is ook maar een weergave enstaat nog iet vast-->
-                    <form id="drag1" class="drag">Text Input</form>
-                    <form id="drag2" class="drag">Password Input</form>
-                    <form id="drag3" class="drag">Search Input</form>
-                    <form id="drag4" class="drag">Prepended Text </form>
-                    <form id="drag5" class="drag">Appended Text </form>
-                    <form id="drag6" class="drag">Prepended Checkbox </form>
-                    <form id="drag7" class="drag">Appended Checkbox </form>
-                    <form id="drag8" class="drag">Button Drop down </form>
-                    <form id="drag9" class="drag">Text  Area </form>
+            type="text" label="Vul hier in" name="adress" placeholder="iets van tekst" required="" enz..enz Hier onder is ook maar een weergave enstaat nog iet vast-->
+                    <div id="drag1" class="drag">
+                        Text Input
+                        <input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md">
+                    </div>
+                    <div id="drag1 " class="drag .tabMenu-1">Password Input</div>
+                    <div id="drag2" class="drag .tabMenu-2">Search Input</div>
+                    <div id="drag3" class="drag .tabMenu-3">Prepended Text </div>
+                    <form id="drag4 tabs-4" class="drag .tabMenu">Appended Text </form>
+                    <form id="drag5 tabs-5" class="drag .tabMenu">Prepended Checkbox </form>
+                    <form id="drag6 tabs-6" class="drag .tabMenu">Appended Checkbox </form>
+                    <form id="drag7 tabs-7" class="drag .tabMenu">Button Drop down </form>
+                    <form id="drag9 tabs-8" class="drag .tabMenu">Text  Area </form>
 
 
                     <!-- #############################################################################################################################################
-                         VOORBEELD: HOE DE BOVENSTAANDE FORMELEMENTEN INGEVULT KUNNEN WORDEN MAAR...hoe we de totale form elementen, attributen en waarden
-                          moeten  toepassen komt later
-                        #############################################################################################################################################-->
+                 VOORBEELD: HOE DE BOVENSTAANDE FORMELEMENTEN INGEVULT KUNNEN WORDEN MAAR...hoe we de totale form elementen, attributen en waarden
+                  moeten  toepassen komt later
+                #############################################################################################################################################-->
                     <!-- #############################################################################################################################################
-                    <form>
-                        <fieldset>
-                            <legend>Input Text</legend>
-                            <input>Text Input/>
-                            <input>Password Input>
-                            <input>Search Input>
-                            <input>Prepended Text >
-                            <input>Appended Text>
-                            <input>Prepended Checkbox >
-                            <input>Appended Checkboxm>
-                            <input>Button Drop down>
-                            <input>Text  Area>
-                        </fieldset>
-                    </form>
-                    #############################################################################################################################################-->
+            <form>
+                <fieldset>
+                    <legend>Input Text</legend>
+                    <input>Text Input/>
+                    <input>Password Input>
+                    <input>Search Input>
+                    <input>Prepended Text >
+                    <input>Appended Text>
+                    <input>Prepended Checkbox >
+                    <input>Appended Checkboxm>
+                    <input>Button Drop down>
+                    <input>Text  Area>
+                </fieldset>
+            </form>
+            #############################################################################################################################################-->
 
                 </div><!--end div compContainer -->
             </section>
@@ -123,10 +132,10 @@
                     <h3>Form name</h3>
                     <div id="hotSpot">
 
-                        <form>Text Input</form>
-                        <form>Password Input</form>
-                        <form>Search Input</form>
-                        <form>Prepended Text </form>
+                        <form></form>
+                        <form></form>
+                        <form></form>
+                        <form></form>
                         <form>Appended Text </form>
                         <form>Prepended Checkbox </form>
                         <form>Appended Checkbox </form>
