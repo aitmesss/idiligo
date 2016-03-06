@@ -1,0 +1,4607 @@
+﻿<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.idiligo.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s1="http://www.idiligo.com/AbstractTypes" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://www.idiligo.com/">
+<wsdl:types>
+<s:schema elementFormDefault="qualified" targetNamespace="http://www.idiligo.com/">
+<s:element name="Login">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="apikey" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="username" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="password" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="LoginResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="LoginResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="LoginBytoken">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="LoginBytokenResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="LoginBytokenResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetServerId">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="publicId" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetServerIdResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="GetServerIdResult" type="s:int"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="SaveCredentials">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="SaveCredentialsResponse">
+<s:complexType/>
+</s:element>
+<s:element name="DeleteCredentials">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="DeleteCredentialsResponse">
+<s:complexType/>
+</s:element>
+<s:element name="GetAgentUrl">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="callId" type="s:long"/>
+<s:element minOccurs="0" maxOccurs="1" name="returnUrl" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetAgentUrlResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="GetAgentUrlResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="NavigateToAgentUrl">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="callId" type="s:long"/>
+<s:element minOccurs="0" maxOccurs="1" name="returnUrl" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="NavigateToAgentUrlResponse">
+<s:complexType/>
+</s:element>
+<s:element name="GetSesData">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetSesDataResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="GetSesDataResult" type="tns:SessionDTO"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="SessionDTO">
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="AccountNumber" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Language" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="online" type="s:boolean"/>
+<s:element minOccurs="1" maxOccurs="1" name="isInsideUser" type="s:boolean"/>
+</s:sequence>
+</s:complexType>
+<s:element name="CreateUser">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="name" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="email" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="username" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="password" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="role" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="CreateUserResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="CreateUserResult" type="s:long"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="CreateContact">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="email" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="CreateContactResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="CreateContactResult" type="s:long"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="CreateCall">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="trajectCode" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="CreateCallResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="CreateCallResult" type="s:long"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="CreateCallEx">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="documentId" type="s:long"/>
+<s:element minOccurs="0" maxOccurs="1" name="customerId" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="externalData" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="CreateCallExResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="CreateCallExResult" type="s:long"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="SetCallValues">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="callId" type="s:long"/>
+<s:element minOccurs="0" maxOccurs="1" name="fields" type="tns:ArrayOfNameValue"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="ArrayOfNameValue">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="NameValue" nillable="true" type="tns:NameValue"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="NameValue">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string"/>
+</s:sequence>
+</s:complexType>
+<s:element name="SetCallValuesResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="SetCallValuesResult" type="s:boolean"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetCallValues">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="callId" type="s:long"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetCallValuesResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="GetCallValuesResult" type="tns:ArrayOfNameValue"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetPublicCallId">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="callId" type="s:long"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetPublicCallIdResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="GetPublicCallIdResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetCallDataById">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="callId" type="s:long"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetCallDataByIdResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="GetCallDataByIdResult" type="tns:CallDTO"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="CallDTO">
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="callId" type="s:long"/>
+<s:element minOccurs="0" maxOccurs="1" name="publicId" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="accountNumber" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="eventCount" type="s:long"/>
+<s:element minOccurs="1" maxOccurs="1" name="serverId" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="username" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="isAgent" type="s:boolean"/>
+<s:element minOccurs="0" maxOccurs="1" name="language" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="comment" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="contactEmail" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="viewerWrap" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="SC_UseJpeg" type="s:boolean"/>
+<s:element minOccurs="0" maxOccurs="1" name="SC_JpegQuality" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="SC_Scale" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="SC_ProxyServer" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="SC_ProxyPort" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="showBrowseHeight" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="showBrowseWidth" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="rtmpt" type="s:boolean"/>
+<s:element minOccurs="1" maxOccurs="1" name="webcamQuality" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="webcamBitrate" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="webcamFramerate" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="microphoneDefaultEnabled" type="s:boolean"/>
+<s:element minOccurs="1" maxOccurs="1" name="microphoneVolume" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="microphoneQuality" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="microphoneFramerate" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="microphoneEchoSuppression" type="s:boolean"/>
+<s:element minOccurs="1" maxOccurs="1" name="useWebRtc" type="s:boolean"/>
+<s:element minOccurs="1" maxOccurs="1" name="showInvite" type="s:boolean"/>
+<s:element minOccurs="0" maxOccurs="1" name="backgroundColor" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="nodeCount" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="hasAccountLogo" type="s:boolean"/>
+<s:element minOccurs="1" maxOccurs="1" name="ownerAccountNumber" nillable="true" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="useChatUsername" type="s:boolean"/>
+<s:element minOccurs="0" maxOccurs="1" name="subscriberCode" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="subscriberCount" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="clientReady" type="s:boolean"/>
+</s:sequence>
+</s:complexType>
+<s:element name="GetCallDataByPublicId">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="publicId" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetCallDataByPublicIdResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="GetCallDataByPublicIdResult" type="tns:CallDTO"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="SetContact">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="callId" type="s:long"/>
+<s:element minOccurs="1" maxOccurs="1" name="contactId" type="s:long"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="SetContactResponse">
+<s:complexType/>
+</s:element>
+<s:element name="GetLanguage">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="language" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetLanguageResponse">
+<s:complexType/>
+</s:element>
+<s:element name="GetServerEvent">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="publicId" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetServerEventResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="GetServerEventResult" type="tns:ArrayOfCallEventDTO"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="ArrayOfCallEventDTO">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="CallEventDTO" nillable="true" type="tns:CallEventDTO"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="CallEventDTO">
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="Id" type="s:long"/>
+<s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string"/>
+</s:sequence>
+</s:complexType>
+<s:element name="GetChatMessage">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="publicId" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="eventIndex" type="s:int"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetChatMessageResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="GetChatMessageResult" type="tns:ChatMessageDTO"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="ChatMessageDTO">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Text" type="s:string"/>
+</s:sequence>
+</s:complexType>
+<s:element name="SetChatMessage">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="publicId" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="username" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="text" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="SetChatMessageResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="SetChatMessageResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetDocumentCursor">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="publicId" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="eventIndex" type="s:int"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetDocumentCursorResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="GetDocumentCursorResult" type="tns:DocumentCursorDTO"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="DocumentCursorDTO">
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="X" type="s:float"/>
+<s:element minOccurs="1" maxOccurs="1" name="Y" type="s:float"/>
+</s:sequence>
+</s:complexType>
+<s:element name="SetDocumentCursor">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="callId" type="s:long"/>
+<s:element minOccurs="1" maxOccurs="1" name="x" type="s:float"/>
+<s:element minOccurs="1" maxOccurs="1" name="y" type="s:float"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="SetDocumentCursorResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="SetDocumentCursorResult" type="s:boolean"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="SetRedirectURL">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="callId" type="s:long"/>
+<s:element minOccurs="0" maxOccurs="1" name="url" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="SetRedirectURLResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="SetRedirectURLResult" type="s:boolean"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetClientCommand">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="publicId" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetClientCommandResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="GetClientCommandResult" type="tns:CommandDTO"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="CommandDTO">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Stap" type="tns:StapDTO"/>
+<s:element minOccurs="0" maxOccurs="1" name="Command" type="s:string"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="StapDTO">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Node" type="tns:Node"/>
+<s:element minOccurs="0" maxOccurs="1" name="Command" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Html" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Values" type="tns:ArrayOfString"/>
+<s:element minOccurs="0" maxOccurs="1" name="DocumentType" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="DocumentUrl" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="DocumentExtension" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="First" type="s:boolean"/>
+<s:element minOccurs="1" maxOccurs="1" name="Last" type="s:boolean"/>
+<s:element minOccurs="1" maxOccurs="1" name="DocumentId" type="s:long"/>
+<s:element minOccurs="1" maxOccurs="1" name="Page" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="Zoom" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="ViewerWrap" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="isEmail" type="s:boolean"/>
+<s:element minOccurs="0" maxOccurs="1" name="Attachments" type="tns:ArrayOfAttachmentDTO"/>
+<s:element minOccurs="0" maxOccurs="1" name="Signs" type="tns:ArrayOfSign"/>
+<s:element minOccurs="0" maxOccurs="1" name="Uploads" type="tns:ArrayOfUpload"/>
+<s:element minOccurs="1" maxOccurs="1" name="Viewer" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="TotalPages" type="s:int"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="Node">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="name" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="title" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="text" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="options" type="tns:OptionArray"/>
+<s:element minOccurs="0" maxOccurs="1" name="fields" type="tns:FieldArray"/>
+<s:element minOccurs="0" maxOccurs="1" name="attachments" type="tns:AttachmentArray"/>
+<s:element minOccurs="0" maxOccurs="1" name="signs" type="tns:SignArray"/>
+<s:element minOccurs="0" maxOccurs="1" name="uploads" type="tns:UploadArray"/>
+<s:element minOccurs="0" maxOccurs="1" name="goals" type="tns:GoalArray"/>
+<s:element minOccurs="0" maxOccurs="1" name="actions" type="tns:ActionArray"/>
+<s:element minOccurs="0" maxOccurs="1" name="templateCode" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="pdfTemplateCode" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="bestandCode" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="browserId" nillable="true" type="s:long"/>
+<s:element minOccurs="0" maxOccurs="1" name="command" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="qsValuesNodeCode" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="goto" type="s:string"/>
+</s:sequence>
+<s:attribute name="id" type="s:string"/>
+<s:attribute name="type" type="tns:NodeType" use="required"/>
+<s:attribute name="visible" type="s:boolean" use="required"/>
+<s:attribute name="clientActive" type="s:boolean" use="required"/>
+<s:attribute name="home" type="s:boolean" use="required"/>
+</s:complexType>
+<s:complexType name="OptionArray">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="option" type="tns:Option"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="Option">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="text" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="goto" type="s:string"/>
+</s:sequence>
+<s:attribute name="value" type="s:string"/>
+</s:complexType>
+<s:complexType name="FieldArray">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="field" type="tns:Field"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="Field">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="options" type="tns:OptionArray"/>
+</s:sequence>
+<s:attribute name="name" type="s:string"/>
+<s:attribute name="text" type="s:string"/>
+<s:attribute name="mandatory" type="s:boolean" use="required"/>
+<s:attribute name="linkedField" type="s:string"/>
+<s:attribute name="width" type="s:int" use="required"/>
+<s:attribute name="cols" type="s:int" use="required"/>
+<s:attribute name="rows" type="s:int" use="required"/>
+</s:complexType>
+<s:complexType name="AttachmentArray">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="attachment" type="tns:Attachment"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="Attachment">
+<s:attribute name="fileCode" type="s:string"/>
+<s:attribute name="templateCode" type="s:string"/>
+<s:attribute name="attach" type="s:boolean" use="required"/>
+</s:complexType>
+<s:complexType name="SignArray">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="sign" type="tns:Sign"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="Sign">
+<s:complexContent mixed="false">
+<s:extension base="tns:Basedocument">
+<s:attribute name="fileCode" type="s:string"/>
+<s:attribute name="templateCode" type="s:string"/>
+<s:attribute name="uploadId" type="s:string"/>
+<s:attribute name="externalFileId" type="s:string"/>
+<s:attribute name="signUrl" type="s:string"/>
+<s:attribute name="statusCode" type="s:int" use="required"/>
+<s:attribute name="statusName" type="s:string"/>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:complexType name="Basedocument">
+<s:attribute name="externalId" type="s:string"/>
+<s:attribute name="documentId" type="s:long" use="required"/>
+<s:attribute name="description" type="s:string"/>
+<s:attribute name="url" type="s:string"/>
+<s:attribute name="preview" type="s:string"/>
+<s:attribute name="attach" type="s:boolean" use="required"/>
+<s:attribute name="size" type="s:string"/>
+<s:attribute name="date" type="s:string"/>
+</s:complexType>
+<s:complexType name="Upload">
+<s:complexContent mixed="false">
+<s:extension base="tns:Basedocument">
+<s:attribute name="name" type="s:string"/>
+<s:attribute name="fileTypes" type="s:string"/>
+<s:attribute name="mandatory" type="s:boolean" use="required"/>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:complexType name="UploadArray">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="upload" type="tns:Upload"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="GoalArray">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="goal" type="tns:Goal"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="Goal">
+<s:attribute name="type" type="tns:GoalType" use="required"/>
+<s:attribute name="reached" type="s:boolean" use="required"/>
+<s:attribute name="description" type="s:string"/>
+</s:complexType>
+<s:simpleType name="GoalType">
+<s:restriction base="s:string">
+<s:enumeration value="Conversion"/>
+</s:restriction>
+</s:simpleType>
+<s:complexType name="ActionArray">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="action" type="tns:Action"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="Action">
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="FireCount" type="s:int"/>
+</s:sequence>
+<s:attribute name="type" type="tns:ActionType" use="required"/>
+<s:attribute name="trigger" type="tns:ActionTrigger" use="required"/>
+<s:attribute name="fireOnce" type="s:boolean" use="required"/>
+<s:attribute name="text" type="s:string"/>
+<s:attribute name="email" type="s:string"/>
+</s:complexType>
+<s:simpleType name="ActionType">
+<s:restriction base="s:string">
+<s:enumeration value="Alert"/>
+<s:enumeration value="Mail"/>
+<s:enumeration value="ClientReady"/>
+</s:restriction>
+</s:simpleType>
+<s:simpleType name="ActionTrigger">
+<s:restriction base="s:string">
+<s:enumeration value="Load"/>
+<s:enumeration value="Unload"/>
+<s:enumeration value="Previous"/>
+<s:enumeration value="Next"/>
+</s:restriction>
+</s:simpleType>
+<s:simpleType name="NodeType">
+<s:restriction base="s:string">
+<s:enumeration value="Choice"/>
+<s:enumeration value="Template"/>
+<s:enumeration value="File"/>
+<s:enumeration value="Form"/>
+<s:enumeration value="Email"/>
+<s:enumeration value="ScreenShare"/>
+<s:enumeration value="ShowBrowse"/>
+<s:enumeration value="ShowBrowseDocument"/>
+<s:enumeration value="ShowBrowseReverse"/>
+<s:enumeration value="Sign"/>
+<s:enumeration value="Upload"/>
+</s:restriction>
+</s:simpleType>
+<s:complexType name="ArrayOfString">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="ArrayOfAttachmentDTO">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="AttachmentDTO" nillable="true" type="tns:AttachmentDTO"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="AttachmentDTO">
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="Id" type="s:long"/>
+<s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Url" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Preview" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="Attach" type="s:boolean"/>
+<s:element minOccurs="0" maxOccurs="1" name="Size" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Date" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="SignUrl" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="SignStatus" type="s:int"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="ArrayOfSign">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="Sign" nillable="true" type="tns:Sign"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="ArrayOfUpload">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="Upload" nillable="true" type="tns:Upload"/>
+</s:sequence>
+</s:complexType>
+<s:element name="SetShowBrowseUnload">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="publicId" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="url" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="SetShowBrowseUnloadResponse">
+<s:complexType/>
+</s:element>
+<s:element name="GetCurrentStep">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="publicId" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetCurrentStepResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="GetCurrentStepResult" type="tns:StapDTO"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="SetHomeStep">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="callId" type="s:long"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="SetHomeStepResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="SetHomeStepResult" type="tns:StapDTO"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="SetPrevStep">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="callId" type="s:long"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="SetPrevStepResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="SetPrevStepResult" type="tns:StapDTO"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="SetNextStep">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="callId" type="s:long"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="SetNextStepResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="SetNextStepResult" type="tns:StapDTO"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="EndCall">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="callId" type="s:long"/>
+<s:element minOccurs="0" maxOccurs="1" name="returnUrl" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="EndCallResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="EndCallResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="SetViewer">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="callId" type="s:long"/>
+<s:element minOccurs="1" maxOccurs="1" name="page" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="zoom" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="documentId" type="s:long"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="SetViewerResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="SetViewerResult" type="tns:StapDTO"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="SetValue">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="publicId" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="name" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="value" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="SetValueResponse">
+<s:complexType/>
+</s:element>
+<s:element name="SetValues">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="publicId" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="names" type="tns:ArrayOfString"/>
+<s:element minOccurs="0" maxOccurs="1" name="values" type="tns:ArrayOfString"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="SetValuesResponse">
+<s:complexType/>
+</s:element>
+<s:element name="SetViewerWrap">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="callId" type="s:long"/>
+<s:element minOccurs="0" maxOccurs="1" name="type" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="SetViewerWrapResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="SetViewerWrapResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="SetComment">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="callId" type="s:long"/>
+<s:element minOccurs="0" maxOccurs="1" name="value" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="SetCommentResponse">
+<s:complexType/>
+</s:element>
+<s:element name="AddDocumentFromBytes">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="file" type="s:base64Binary"/>
+<s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="AddDocumentFromBytesResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="AddDocumentFromBytesResult" type="s:long"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="AddDocumentFromBytesEx">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="file" type="s:base64Binary"/>
+<s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="externalId" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="priv" type="s:boolean"/>
+<s:element minOccurs="1" maxOccurs="1" name="temp" type="s:boolean"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="AddDocumentFromBytesExResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="AddDocumentFromBytesExResult" type="s:long"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="AddDocumentFromUrl">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="url" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="externalId" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="AddDocumentFromUrlResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="AddDocumentFromUrlResult" type="s:long"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="AddDocumentToCall">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="callId" type="s:long"/>
+<s:element minOccurs="1" maxOccurs="1" name="documentId" type="s:long"/>
+<s:element minOccurs="0" maxOccurs="1" name="nodeCode" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="AddDocumentToCallResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="AddDocumentToCallResult" type="s:long"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="DeleteDocument">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="documentId" type="s:long"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="DeleteDocumentResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="DeleteDocumentResult" type="s:boolean"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetDocumentStatus">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="documentId" type="s:long"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetDocumentStatusResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="GetDocumentStatusResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetDocumentProgress">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="documentId" type="s:long"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetDocumentProgressResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="GetDocumentProgressResult" type="tns:DocumentStatusDTO"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="DocumentStatusDTO">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="Percentage" type="s:decimal"/>
+</s:sequence>
+</s:complexType>
+<s:element name="VerifyUserByMail">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="mail" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="VerifyUserByMailResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="VerifyUserByMailResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="SendMail">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="callId" type="s:long"/>
+<s:element minOccurs="0" maxOccurs="1" name="to" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="templateCode" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="attachments" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="SendMailResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="SendMailResult" type="s:boolean"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetCall">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="callId" type="s:long"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetCallResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="GetCallResult" type="tns:CallDTO"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetCallByPublicId">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="publicId" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetCallByPublicIdResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="GetCallByPublicIdResult" type="tns:CallDTO"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetEvents">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="token" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="publicId" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="eventCount" type="s:int"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetEventsResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="GetEventsResult" type="tns:ArrayOfCallEventDTO"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="string" nillable="true" type="s:string"/>
+<s:element name="int" type="s:int"/>
+<s:element name="SessionDTO" nillable="true" type="tns:SessionDTO"/>
+<s:element name="long" type="s:long"/>
+<s:element name="ArrayOfNameValue" nillable="true" type="tns:ArrayOfNameValue"/>
+<s:element name="CallDTO" nillable="true" type="tns:CallDTO"/>
+<s:element name="ArrayOfCallEventDTO" nillable="true" type="tns:ArrayOfCallEventDTO"/>
+<s:element name="ChatMessageDTO" nillable="true" type="tns:ChatMessageDTO"/>
+<s:element name="DocumentCursorDTO" nillable="true" type="tns:DocumentCursorDTO"/>
+<s:element name="boolean" type="s:boolean"/>
+<s:element name="CommandDTO" nillable="true" type="tns:CommandDTO"/>
+<s:element name="StapDTO" nillable="true" type="tns:StapDTO"/>
+<s:element name="DocumentStatusDTO" nillable="true" type="tns:DocumentStatusDTO"/>
+</s:schema>
+<s:schema targetNamespace="http://www.idiligo.com/AbstractTypes">
+<s:import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+<s:complexType name="StringArray">
+<s:complexContent mixed="false">
+<s:restriction base="soapenc:Array">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string"/>
+</s:sequence>
+</s:restriction>
+</s:complexContent>
+</s:complexType>
+</s:schema>
+</wsdl:types>
+<wsdl:message name="LoginSoapIn">
+<wsdl:part name="parameters" element="tns:Login"/>
+</wsdl:message>
+<wsdl:message name="LoginSoapOut">
+<wsdl:part name="parameters" element="tns:LoginResponse"/>
+</wsdl:message>
+<wsdl:message name="LoginBytokenSoapIn">
+<wsdl:part name="parameters" element="tns:LoginBytoken"/>
+</wsdl:message>
+<wsdl:message name="LoginBytokenSoapOut">
+<wsdl:part name="parameters" element="tns:LoginBytokenResponse"/>
+</wsdl:message>
+<wsdl:message name="GetServerIdSoapIn">
+<wsdl:part name="parameters" element="tns:GetServerId"/>
+</wsdl:message>
+<wsdl:message name="GetServerIdSoapOut">
+<wsdl:part name="parameters" element="tns:GetServerIdResponse"/>
+</wsdl:message>
+<wsdl:message name="SaveCredentialsSoapIn">
+<wsdl:part name="parameters" element="tns:SaveCredentials"/>
+</wsdl:message>
+<wsdl:message name="SaveCredentialsSoapOut">
+<wsdl:part name="parameters" element="tns:SaveCredentialsResponse"/>
+</wsdl:message>
+<wsdl:message name="DeleteCredentialsSoapIn">
+<wsdl:part name="parameters" element="tns:DeleteCredentials"/>
+</wsdl:message>
+<wsdl:message name="DeleteCredentialsSoapOut">
+<wsdl:part name="parameters" element="tns:DeleteCredentialsResponse"/>
+</wsdl:message>
+<wsdl:message name="GetAgentUrlSoapIn">
+<wsdl:part name="parameters" element="tns:GetAgentUrl"/>
+</wsdl:message>
+<wsdl:message name="GetAgentUrlSoapOut">
+<wsdl:part name="parameters" element="tns:GetAgentUrlResponse"/>
+</wsdl:message>
+<wsdl:message name="NavigateToAgentUrlSoapIn">
+<wsdl:part name="parameters" element="tns:NavigateToAgentUrl"/>
+</wsdl:message>
+<wsdl:message name="NavigateToAgentUrlSoapOut">
+<wsdl:part name="parameters" element="tns:NavigateToAgentUrlResponse"/>
+</wsdl:message>
+<wsdl:message name="GetSesDataSoapIn">
+<wsdl:part name="parameters" element="tns:GetSesData"/>
+</wsdl:message>
+<wsdl:message name="GetSesDataSoapOut">
+<wsdl:part name="parameters" element="tns:GetSesDataResponse"/>
+</wsdl:message>
+<wsdl:message name="CreateUserSoapIn">
+<wsdl:part name="parameters" element="tns:CreateUser"/>
+</wsdl:message>
+<wsdl:message name="CreateUserSoapOut">
+<wsdl:part name="parameters" element="tns:CreateUserResponse"/>
+</wsdl:message>
+<wsdl:message name="CreateContactSoapIn">
+<wsdl:part name="parameters" element="tns:CreateContact"/>
+</wsdl:message>
+<wsdl:message name="CreateContactSoapOut">
+<wsdl:part name="parameters" element="tns:CreateContactResponse"/>
+</wsdl:message>
+<wsdl:message name="CreateCallSoapIn">
+<wsdl:part name="parameters" element="tns:CreateCall"/>
+</wsdl:message>
+<wsdl:message name="CreateCallSoapOut">
+<wsdl:part name="parameters" element="tns:CreateCallResponse"/>
+</wsdl:message>
+<wsdl:message name="CreateCallExSoapIn">
+<wsdl:part name="parameters" element="tns:CreateCallEx"/>
+</wsdl:message>
+<wsdl:message name="CreateCallExSoapOut">
+<wsdl:part name="parameters" element="tns:CreateCallExResponse"/>
+</wsdl:message>
+<wsdl:message name="SetCallValuesSoapIn">
+<wsdl:part name="parameters" element="tns:SetCallValues"/>
+</wsdl:message>
+<wsdl:message name="SetCallValuesSoapOut">
+<wsdl:part name="parameters" element="tns:SetCallValuesResponse"/>
+</wsdl:message>
+<wsdl:message name="GetCallValuesSoapIn">
+<wsdl:part name="parameters" element="tns:GetCallValues"/>
+</wsdl:message>
+<wsdl:message name="GetCallValuesSoapOut">
+<wsdl:part name="parameters" element="tns:GetCallValuesResponse"/>
+</wsdl:message>
+<wsdl:message name="GetPublicCallIdSoapIn">
+<wsdl:part name="parameters" element="tns:GetPublicCallId"/>
+</wsdl:message>
+<wsdl:message name="GetPublicCallIdSoapOut">
+<wsdl:part name="parameters" element="tns:GetPublicCallIdResponse"/>
+</wsdl:message>
+<wsdl:message name="GetCallDataByIdSoapIn">
+<wsdl:part name="parameters" element="tns:GetCallDataById"/>
+</wsdl:message>
+<wsdl:message name="GetCallDataByIdSoapOut">
+<wsdl:part name="parameters" element="tns:GetCallDataByIdResponse"/>
+</wsdl:message>
+<wsdl:message name="GetCallDataByPublicIdSoapIn">
+<wsdl:part name="parameters" element="tns:GetCallDataByPublicId"/>
+</wsdl:message>
+<wsdl:message name="GetCallDataByPublicIdSoapOut">
+<wsdl:part name="parameters" element="tns:GetCallDataByPublicIdResponse"/>
+</wsdl:message>
+<wsdl:message name="SetContactSoapIn">
+<wsdl:part name="parameters" element="tns:SetContact"/>
+</wsdl:message>
+<wsdl:message name="SetContactSoapOut">
+<wsdl:part name="parameters" element="tns:SetContactResponse"/>
+</wsdl:message>
+<wsdl:message name="GetLanguageSoapIn">
+<wsdl:part name="parameters" element="tns:GetLanguage"/>
+</wsdl:message>
+<wsdl:message name="GetLanguageSoapOut">
+<wsdl:part name="parameters" element="tns:GetLanguageResponse"/>
+</wsdl:message>
+<wsdl:message name="GetServerEventSoapIn">
+<wsdl:part name="parameters" element="tns:GetServerEvent"/>
+</wsdl:message>
+<wsdl:message name="GetServerEventSoapOut">
+<wsdl:part name="parameters" element="tns:GetServerEventResponse"/>
+</wsdl:message>
+<wsdl:message name="GetChatMessageSoapIn">
+<wsdl:part name="parameters" element="tns:GetChatMessage"/>
+</wsdl:message>
+<wsdl:message name="GetChatMessageSoapOut">
+<wsdl:part name="parameters" element="tns:GetChatMessageResponse"/>
+</wsdl:message>
+<wsdl:message name="SetChatMessageSoapIn">
+<wsdl:part name="parameters" element="tns:SetChatMessage"/>
+</wsdl:message>
+<wsdl:message name="SetChatMessageSoapOut">
+<wsdl:part name="parameters" element="tns:SetChatMessageResponse"/>
+</wsdl:message>
+<wsdl:message name="GetDocumentCursorSoapIn">
+<wsdl:part name="parameters" element="tns:GetDocumentCursor"/>
+</wsdl:message>
+<wsdl:message name="GetDocumentCursorSoapOut">
+<wsdl:part name="parameters" element="tns:GetDocumentCursorResponse"/>
+</wsdl:message>
+<wsdl:message name="SetDocumentCursorSoapIn">
+<wsdl:part name="parameters" element="tns:SetDocumentCursor"/>
+</wsdl:message>
+<wsdl:message name="SetDocumentCursorSoapOut">
+<wsdl:part name="parameters" element="tns:SetDocumentCursorResponse"/>
+</wsdl:message>
+<wsdl:message name="SetRedirectURLSoapIn">
+<wsdl:part name="parameters" element="tns:SetRedirectURL"/>
+</wsdl:message>
+<wsdl:message name="SetRedirectURLSoapOut">
+<wsdl:part name="parameters" element="tns:SetRedirectURLResponse"/>
+</wsdl:message>
+<wsdl:message name="GetClientCommandSoapIn">
+<wsdl:part name="parameters" element="tns:GetClientCommand"/>
+</wsdl:message>
+<wsdl:message name="GetClientCommandSoapOut">
+<wsdl:part name="parameters" element="tns:GetClientCommandResponse"/>
+</wsdl:message>
+<wsdl:message name="SetShowBrowseUnloadSoapIn">
+<wsdl:part name="parameters" element="tns:SetShowBrowseUnload"/>
+</wsdl:message>
+<wsdl:message name="SetShowBrowseUnloadSoapOut">
+<wsdl:part name="parameters" element="tns:SetShowBrowseUnloadResponse"/>
+</wsdl:message>
+<wsdl:message name="GetCurrentStepSoapIn">
+<wsdl:part name="parameters" element="tns:GetCurrentStep"/>
+</wsdl:message>
+<wsdl:message name="GetCurrentStepSoapOut">
+<wsdl:part name="parameters" element="tns:GetCurrentStepResponse"/>
+</wsdl:message>
+<wsdl:message name="SetHomeStepSoapIn">
+<wsdl:part name="parameters" element="tns:SetHomeStep"/>
+</wsdl:message>
+<wsdl:message name="SetHomeStepSoapOut">
+<wsdl:part name="parameters" element="tns:SetHomeStepResponse"/>
+</wsdl:message>
+<wsdl:message name="SetPrevStepSoapIn">
+<wsdl:part name="parameters" element="tns:SetPrevStep"/>
+</wsdl:message>
+<wsdl:message name="SetPrevStepSoapOut">
+<wsdl:part name="parameters" element="tns:SetPrevStepResponse"/>
+</wsdl:message>
+<wsdl:message name="SetNextStepSoapIn">
+<wsdl:part name="parameters" element="tns:SetNextStep"/>
+</wsdl:message>
+<wsdl:message name="SetNextStepSoapOut">
+<wsdl:part name="parameters" element="tns:SetNextStepResponse"/>
+</wsdl:message>
+<wsdl:message name="EndCallSoapIn">
+<wsdl:part name="parameters" element="tns:EndCall"/>
+</wsdl:message>
+<wsdl:message name="EndCallSoapOut">
+<wsdl:part name="parameters" element="tns:EndCallResponse"/>
+</wsdl:message>
+<wsdl:message name="SetViewerSoapIn">
+<wsdl:part name="parameters" element="tns:SetViewer"/>
+</wsdl:message>
+<wsdl:message name="SetViewerSoapOut">
+<wsdl:part name="parameters" element="tns:SetViewerResponse"/>
+</wsdl:message>
+<wsdl:message name="SetValueSoapIn">
+<wsdl:part name="parameters" element="tns:SetValue"/>
+</wsdl:message>
+<wsdl:message name="SetValueSoapOut">
+<wsdl:part name="parameters" element="tns:SetValueResponse"/>
+</wsdl:message>
+<wsdl:message name="SetValuesSoapIn">
+<wsdl:part name="parameters" element="tns:SetValues"/>
+</wsdl:message>
+<wsdl:message name="SetValuesSoapOut">
+<wsdl:part name="parameters" element="tns:SetValuesResponse"/>
+</wsdl:message>
+<wsdl:message name="SetViewerWrapSoapIn">
+<wsdl:part name="parameters" element="tns:SetViewerWrap"/>
+</wsdl:message>
+<wsdl:message name="SetViewerWrapSoapOut">
+<wsdl:part name="parameters" element="tns:SetViewerWrapResponse"/>
+</wsdl:message>
+<wsdl:message name="SetCommentSoapIn">
+<wsdl:part name="parameters" element="tns:SetComment"/>
+</wsdl:message>
+<wsdl:message name="SetCommentSoapOut">
+<wsdl:part name="parameters" element="tns:SetCommentResponse"/>
+</wsdl:message>
+<wsdl:message name="AddDocumentFromBytesSoapIn">
+<wsdl:part name="parameters" element="tns:AddDocumentFromBytes"/>
+</wsdl:message>
+<wsdl:message name="AddDocumentFromBytesSoapOut">
+<wsdl:part name="parameters" element="tns:AddDocumentFromBytesResponse"/>
+</wsdl:message>
+<wsdl:message name="AddDocumentFromBytesExSoapIn">
+<wsdl:part name="parameters" element="tns:AddDocumentFromBytesEx"/>
+</wsdl:message>
+<wsdl:message name="AddDocumentFromBytesExSoapOut">
+<wsdl:part name="parameters" element="tns:AddDocumentFromBytesExResponse"/>
+</wsdl:message>
+<wsdl:message name="AddDocumentFromUrlSoapIn">
+<wsdl:part name="parameters" element="tns:AddDocumentFromUrl"/>
+</wsdl:message>
+<wsdl:message name="AddDocumentFromUrlSoapOut">
+<wsdl:part name="parameters" element="tns:AddDocumentFromUrlResponse"/>
+</wsdl:message>
+<wsdl:message name="AddDocumentToCallSoapIn">
+<wsdl:part name="parameters" element="tns:AddDocumentToCall"/>
+</wsdl:message>
+<wsdl:message name="AddDocumentToCallSoapOut">
+<wsdl:part name="parameters" element="tns:AddDocumentToCallResponse"/>
+</wsdl:message>
+<wsdl:message name="DeleteDocumentSoapIn">
+<wsdl:part name="parameters" element="tns:DeleteDocument"/>
+</wsdl:message>
+<wsdl:message name="DeleteDocumentSoapOut">
+<wsdl:part name="parameters" element="tns:DeleteDocumentResponse"/>
+</wsdl:message>
+<wsdl:message name="GetDocumentStatusSoapIn">
+<wsdl:part name="parameters" element="tns:GetDocumentStatus"/>
+</wsdl:message>
+<wsdl:message name="GetDocumentStatusSoapOut">
+<wsdl:part name="parameters" element="tns:GetDocumentStatusResponse"/>
+</wsdl:message>
+<wsdl:message name="GetDocumentProgressSoapIn">
+<wsdl:part name="parameters" element="tns:GetDocumentProgress"/>
+</wsdl:message>
+<wsdl:message name="GetDocumentProgressSoapOut">
+<wsdl:part name="parameters" element="tns:GetDocumentProgressResponse"/>
+</wsdl:message>
+<wsdl:message name="VerifyUserByMailSoapIn">
+<wsdl:part name="parameters" element="tns:VerifyUserByMail"/>
+</wsdl:message>
+<wsdl:message name="VerifyUserByMailSoapOut">
+<wsdl:part name="parameters" element="tns:VerifyUserByMailResponse"/>
+</wsdl:message>
+<wsdl:message name="SendMailSoapIn">
+<wsdl:part name="parameters" element="tns:SendMail"/>
+</wsdl:message>
+<wsdl:message name="SendMailSoapOut">
+<wsdl:part name="parameters" element="tns:SendMailResponse"/>
+</wsdl:message>
+<wsdl:message name="GetCallSoapIn">
+<wsdl:part name="parameters" element="tns:GetCall"/>
+</wsdl:message>
+<wsdl:message name="GetCallSoapOut">
+<wsdl:part name="parameters" element="tns:GetCallResponse"/>
+</wsdl:message>
+<wsdl:message name="GetCallByPublicIdSoapIn">
+<wsdl:part name="parameters" element="tns:GetCallByPublicId"/>
+</wsdl:message>
+<wsdl:message name="GetCallByPublicIdSoapOut">
+<wsdl:part name="parameters" element="tns:GetCallByPublicIdResponse"/>
+</wsdl:message>
+<wsdl:message name="GetEventsSoapIn">
+<wsdl:part name="parameters" element="tns:GetEvents"/>
+</wsdl:message>
+<wsdl:message name="GetEventsSoapOut">
+<wsdl:part name="parameters" element="tns:GetEventsResponse"/>
+</wsdl:message>
+<wsdl:message name="LoginHttpGetIn">
+<wsdl:part name="apikey" type="s:string"/>
+<wsdl:part name="username" type="s:string"/>
+<wsdl:part name="password" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="LoginHttpGetOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:message name="LoginBytokenHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="LoginBytokenHttpGetOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:message name="GetServerIdHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="publicId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetServerIdHttpGetOut">
+<wsdl:part name="Body" element="tns:int"/>
+</wsdl:message>
+<wsdl:message name="SaveCredentialsHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="SaveCredentialsHttpGetOut"/>
+<wsdl:message name="DeleteCredentialsHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="DeleteCredentialsHttpGetOut"/>
+<wsdl:message name="GetAgentUrlHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="callId" type="s:string"/>
+<wsdl:part name="returnUrl" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetAgentUrlHttpGetOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:message name="NavigateToAgentUrlHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="callId" type="s:string"/>
+<wsdl:part name="returnUrl" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="NavigateToAgentUrlHttpGetOut"/>
+<wsdl:message name="GetSesDataHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetSesDataHttpGetOut">
+<wsdl:part name="Body" element="tns:SessionDTO"/>
+</wsdl:message>
+<wsdl:message name="CreateUserHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="name" type="s:string"/>
+<wsdl:part name="email" type="s:string"/>
+<wsdl:part name="username" type="s:string"/>
+<wsdl:part name="password" type="s:string"/>
+<wsdl:part name="role" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="CreateUserHttpGetOut">
+<wsdl:part name="Body" element="tns:long"/>
+</wsdl:message>
+<wsdl:message name="CreateContactHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="email" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="CreateContactHttpGetOut">
+<wsdl:part name="Body" element="tns:long"/>
+</wsdl:message>
+<wsdl:message name="CreateCallHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="trajectCode" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="CreateCallHttpGetOut">
+<wsdl:part name="Body" element="tns:long"/>
+</wsdl:message>
+<wsdl:message name="CreateCallExHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="documentId" type="s:string"/>
+<wsdl:part name="customerId" type="s:string"/>
+<wsdl:part name="externalData" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="CreateCallExHttpGetOut">
+<wsdl:part name="Body" element="tns:long"/>
+</wsdl:message>
+<wsdl:message name="GetCallValuesHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="callId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetCallValuesHttpGetOut">
+<wsdl:part name="Body" element="tns:ArrayOfNameValue"/>
+</wsdl:message>
+<wsdl:message name="GetPublicCallIdHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="callId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetPublicCallIdHttpGetOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:message name="GetCallDataByIdHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="callId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetCallDataByIdHttpGetOut">
+<wsdl:part name="Body" element="tns:CallDTO"/>
+</wsdl:message>
+<wsdl:message name="GetCallDataByPublicIdHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="publicId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetCallDataByPublicIdHttpGetOut">
+<wsdl:part name="Body" element="tns:CallDTO"/>
+</wsdl:message>
+<wsdl:message name="SetContactHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="callId" type="s:string"/>
+<wsdl:part name="contactId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="SetContactHttpGetOut"/>
+<wsdl:message name="GetLanguageHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="language" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetLanguageHttpGetOut"/>
+<wsdl:message name="GetServerEventHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="publicId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetServerEventHttpGetOut">
+<wsdl:part name="Body" element="tns:ArrayOfCallEventDTO"/>
+</wsdl:message>
+<wsdl:message name="GetChatMessageHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="publicId" type="s:string"/>
+<wsdl:part name="eventIndex" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetChatMessageHttpGetOut">
+<wsdl:part name="Body" element="tns:ChatMessageDTO"/>
+</wsdl:message>
+<wsdl:message name="SetChatMessageHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="publicId" type="s:string"/>
+<wsdl:part name="username" type="s:string"/>
+<wsdl:part name="text" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="SetChatMessageHttpGetOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:message name="GetDocumentCursorHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="publicId" type="s:string"/>
+<wsdl:part name="eventIndex" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetDocumentCursorHttpGetOut">
+<wsdl:part name="Body" element="tns:DocumentCursorDTO"/>
+</wsdl:message>
+<wsdl:message name="SetDocumentCursorHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="callId" type="s:string"/>
+<wsdl:part name="x" type="s:string"/>
+<wsdl:part name="y" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="SetDocumentCursorHttpGetOut">
+<wsdl:part name="Body" element="tns:boolean"/>
+</wsdl:message>
+<wsdl:message name="SetRedirectURLHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="callId" type="s:string"/>
+<wsdl:part name="url" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="SetRedirectURLHttpGetOut">
+<wsdl:part name="Body" element="tns:boolean"/>
+</wsdl:message>
+<wsdl:message name="GetClientCommandHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="publicId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetClientCommandHttpGetOut">
+<wsdl:part name="Body" element="tns:CommandDTO"/>
+</wsdl:message>
+<wsdl:message name="SetShowBrowseUnloadHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="publicId" type="s:string"/>
+<wsdl:part name="url" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="SetShowBrowseUnloadHttpGetOut"/>
+<wsdl:message name="GetCurrentStepHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="publicId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetCurrentStepHttpGetOut">
+<wsdl:part name="Body" element="tns:StapDTO"/>
+</wsdl:message>
+<wsdl:message name="SetHomeStepHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="callId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="SetHomeStepHttpGetOut">
+<wsdl:part name="Body" element="tns:StapDTO"/>
+</wsdl:message>
+<wsdl:message name="SetPrevStepHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="callId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="SetPrevStepHttpGetOut">
+<wsdl:part name="Body" element="tns:StapDTO"/>
+</wsdl:message>
+<wsdl:message name="SetNextStepHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="callId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="SetNextStepHttpGetOut">
+<wsdl:part name="Body" element="tns:StapDTO"/>
+</wsdl:message>
+<wsdl:message name="EndCallHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="callId" type="s:string"/>
+<wsdl:part name="returnUrl" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="EndCallHttpGetOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:message name="SetViewerHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="callId" type="s:string"/>
+<wsdl:part name="page" type="s:string"/>
+<wsdl:part name="zoom" type="s:string"/>
+<wsdl:part name="documentId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="SetViewerHttpGetOut">
+<wsdl:part name="Body" element="tns:StapDTO"/>
+</wsdl:message>
+<wsdl:message name="SetValueHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="publicId" type="s:string"/>
+<wsdl:part name="name" type="s:string"/>
+<wsdl:part name="value" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="SetValueHttpGetOut"/>
+<wsdl:message name="SetValuesHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="publicId" type="s:string"/>
+<wsdl:part name="names" type="s1:StringArray"/>
+<wsdl:part name="values" type="s1:StringArray"/>
+</wsdl:message>
+<wsdl:message name="SetValuesHttpGetOut"/>
+<wsdl:message name="SetViewerWrapHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="callId" type="s:string"/>
+<wsdl:part name="type" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="SetViewerWrapHttpGetOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:message name="SetCommentHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="callId" type="s:string"/>
+<wsdl:part name="value" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="SetCommentHttpGetOut"/>
+<wsdl:message name="AddDocumentFromBytesHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="file" type="s1:StringArray"/>
+<wsdl:part name="filename" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="AddDocumentFromBytesHttpGetOut">
+<wsdl:part name="Body" element="tns:long"/>
+</wsdl:message>
+<wsdl:message name="AddDocumentFromBytesExHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="file" type="s1:StringArray"/>
+<wsdl:part name="filename" type="s:string"/>
+<wsdl:part name="externalId" type="s:string"/>
+<wsdl:part name="priv" type="s:string"/>
+<wsdl:part name="temp" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="AddDocumentFromBytesExHttpGetOut">
+<wsdl:part name="Body" element="tns:long"/>
+</wsdl:message>
+<wsdl:message name="AddDocumentFromUrlHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="url" type="s:string"/>
+<wsdl:part name="filename" type="s:string"/>
+<wsdl:part name="externalId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="AddDocumentFromUrlHttpGetOut">
+<wsdl:part name="Body" element="tns:long"/>
+</wsdl:message>
+<wsdl:message name="AddDocumentToCallHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="callId" type="s:string"/>
+<wsdl:part name="documentId" type="s:string"/>
+<wsdl:part name="nodeCode" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="AddDocumentToCallHttpGetOut">
+<wsdl:part name="Body" element="tns:long"/>
+</wsdl:message>
+<wsdl:message name="DeleteDocumentHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="documentId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="DeleteDocumentHttpGetOut">
+<wsdl:part name="Body" element="tns:boolean"/>
+</wsdl:message>
+<wsdl:message name="GetDocumentStatusHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="documentId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetDocumentStatusHttpGetOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:message name="GetDocumentProgressHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="documentId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetDocumentProgressHttpGetOut">
+<wsdl:part name="Body" element="tns:DocumentStatusDTO"/>
+</wsdl:message>
+<wsdl:message name="VerifyUserByMailHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="mail" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="VerifyUserByMailHttpGetOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:message name="SendMailHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="callId" type="s:string"/>
+<wsdl:part name="to" type="s:string"/>
+<wsdl:part name="templateCode" type="s:string"/>
+<wsdl:part name="attachments" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="SendMailHttpGetOut">
+<wsdl:part name="Body" element="tns:boolean"/>
+</wsdl:message>
+<wsdl:message name="GetCallHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="callId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetCallHttpGetOut">
+<wsdl:part name="Body" element="tns:CallDTO"/>
+</wsdl:message>
+<wsdl:message name="GetCallByPublicIdHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="publicId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetCallByPublicIdHttpGetOut">
+<wsdl:part name="Body" element="tns:CallDTO"/>
+</wsdl:message>
+<wsdl:message name="GetEventsHttpGetIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="publicId" type="s:string"/>
+<wsdl:part name="eventCount" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetEventsHttpGetOut">
+<wsdl:part name="Body" element="tns:ArrayOfCallEventDTO"/>
+</wsdl:message>
+<wsdl:message name="LoginHttpPostIn">
+<wsdl:part name="apikey" type="s:string"/>
+<wsdl:part name="username" type="s:string"/>
+<wsdl:part name="password" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="LoginHttpPostOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:message name="LoginBytokenHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="LoginBytokenHttpPostOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:message name="GetServerIdHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="publicId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetServerIdHttpPostOut">
+<wsdl:part name="Body" element="tns:int"/>
+</wsdl:message>
+<wsdl:message name="SaveCredentialsHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="SaveCredentialsHttpPostOut"/>
+<wsdl:message name="DeleteCredentialsHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="DeleteCredentialsHttpPostOut"/>
+<wsdl:message name="GetAgentUrlHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="callId" type="s:string"/>
+<wsdl:part name="returnUrl" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetAgentUrlHttpPostOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:message name="NavigateToAgentUrlHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="callId" type="s:string"/>
+<wsdl:part name="returnUrl" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="NavigateToAgentUrlHttpPostOut"/>
+<wsdl:message name="GetSesDataHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetSesDataHttpPostOut">
+<wsdl:part name="Body" element="tns:SessionDTO"/>
+</wsdl:message>
+<wsdl:message name="CreateUserHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="name" type="s:string"/>
+<wsdl:part name="email" type="s:string"/>
+<wsdl:part name="username" type="s:string"/>
+<wsdl:part name="password" type="s:string"/>
+<wsdl:part name="role" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="CreateUserHttpPostOut">
+<wsdl:part name="Body" element="tns:long"/>
+</wsdl:message>
+<wsdl:message name="CreateContactHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="email" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="CreateContactHttpPostOut">
+<wsdl:part name="Body" element="tns:long"/>
+</wsdl:message>
+<wsdl:message name="CreateCallHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="trajectCode" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="CreateCallHttpPostOut">
+<wsdl:part name="Body" element="tns:long"/>
+</wsdl:message>
+<wsdl:message name="CreateCallExHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="documentId" type="s:string"/>
+<wsdl:part name="customerId" type="s:string"/>
+<wsdl:part name="externalData" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="CreateCallExHttpPostOut">
+<wsdl:part name="Body" element="tns:long"/>
+</wsdl:message>
+<wsdl:message name="GetCallValuesHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="callId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetCallValuesHttpPostOut">
+<wsdl:part name="Body" element="tns:ArrayOfNameValue"/>
+</wsdl:message>
+<wsdl:message name="GetPublicCallIdHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="callId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetPublicCallIdHttpPostOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:message name="GetCallDataByIdHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="callId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetCallDataByIdHttpPostOut">
+<wsdl:part name="Body" element="tns:CallDTO"/>
+</wsdl:message>
+<wsdl:message name="GetCallDataByPublicIdHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="publicId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetCallDataByPublicIdHttpPostOut">
+<wsdl:part name="Body" element="tns:CallDTO"/>
+</wsdl:message>
+<wsdl:message name="SetContactHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="callId" type="s:string"/>
+<wsdl:part name="contactId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="SetContactHttpPostOut"/>
+<wsdl:message name="GetLanguageHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="language" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetLanguageHttpPostOut"/>
+<wsdl:message name="GetServerEventHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="publicId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetServerEventHttpPostOut">
+<wsdl:part name="Body" element="tns:ArrayOfCallEventDTO"/>
+</wsdl:message>
+<wsdl:message name="GetChatMessageHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="publicId" type="s:string"/>
+<wsdl:part name="eventIndex" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetChatMessageHttpPostOut">
+<wsdl:part name="Body" element="tns:ChatMessageDTO"/>
+</wsdl:message>
+<wsdl:message name="SetChatMessageHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="publicId" type="s:string"/>
+<wsdl:part name="username" type="s:string"/>
+<wsdl:part name="text" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="SetChatMessageHttpPostOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:message name="GetDocumentCursorHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="publicId" type="s:string"/>
+<wsdl:part name="eventIndex" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetDocumentCursorHttpPostOut">
+<wsdl:part name="Body" element="tns:DocumentCursorDTO"/>
+</wsdl:message>
+<wsdl:message name="SetDocumentCursorHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="callId" type="s:string"/>
+<wsdl:part name="x" type="s:string"/>
+<wsdl:part name="y" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="SetDocumentCursorHttpPostOut">
+<wsdl:part name="Body" element="tns:boolean"/>
+</wsdl:message>
+<wsdl:message name="SetRedirectURLHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="callId" type="s:string"/>
+<wsdl:part name="url" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="SetRedirectURLHttpPostOut">
+<wsdl:part name="Body" element="tns:boolean"/>
+</wsdl:message>
+<wsdl:message name="GetClientCommandHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="publicId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetClientCommandHttpPostOut">
+<wsdl:part name="Body" element="tns:CommandDTO"/>
+</wsdl:message>
+<wsdl:message name="SetShowBrowseUnloadHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="publicId" type="s:string"/>
+<wsdl:part name="url" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="SetShowBrowseUnloadHttpPostOut"/>
+<wsdl:message name="GetCurrentStepHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="publicId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetCurrentStepHttpPostOut">
+<wsdl:part name="Body" element="tns:StapDTO"/>
+</wsdl:message>
+<wsdl:message name="SetHomeStepHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="callId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="SetHomeStepHttpPostOut">
+<wsdl:part name="Body" element="tns:StapDTO"/>
+</wsdl:message>
+<wsdl:message name="SetPrevStepHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="callId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="SetPrevStepHttpPostOut">
+<wsdl:part name="Body" element="tns:StapDTO"/>
+</wsdl:message>
+<wsdl:message name="SetNextStepHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="callId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="SetNextStepHttpPostOut">
+<wsdl:part name="Body" element="tns:StapDTO"/>
+</wsdl:message>
+<wsdl:message name="EndCallHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="callId" type="s:string"/>
+<wsdl:part name="returnUrl" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="EndCallHttpPostOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:message name="SetViewerHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="callId" type="s:string"/>
+<wsdl:part name="page" type="s:string"/>
+<wsdl:part name="zoom" type="s:string"/>
+<wsdl:part name="documentId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="SetViewerHttpPostOut">
+<wsdl:part name="Body" element="tns:StapDTO"/>
+</wsdl:message>
+<wsdl:message name="SetValueHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="publicId" type="s:string"/>
+<wsdl:part name="name" type="s:string"/>
+<wsdl:part name="value" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="SetValueHttpPostOut"/>
+<wsdl:message name="SetValuesHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="publicId" type="s:string"/>
+<wsdl:part name="names" type="s1:StringArray"/>
+<wsdl:part name="values" type="s1:StringArray"/>
+</wsdl:message>
+<wsdl:message name="SetValuesHttpPostOut"/>
+<wsdl:message name="SetViewerWrapHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="callId" type="s:string"/>
+<wsdl:part name="type" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="SetViewerWrapHttpPostOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:message name="SetCommentHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="callId" type="s:string"/>
+<wsdl:part name="value" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="SetCommentHttpPostOut"/>
+<wsdl:message name="AddDocumentFromBytesHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="file" type="s1:StringArray"/>
+<wsdl:part name="filename" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="AddDocumentFromBytesHttpPostOut">
+<wsdl:part name="Body" element="tns:long"/>
+</wsdl:message>
+<wsdl:message name="AddDocumentFromBytesExHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="file" type="s1:StringArray"/>
+<wsdl:part name="filename" type="s:string"/>
+<wsdl:part name="externalId" type="s:string"/>
+<wsdl:part name="priv" type="s:string"/>
+<wsdl:part name="temp" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="AddDocumentFromBytesExHttpPostOut">
+<wsdl:part name="Body" element="tns:long"/>
+</wsdl:message>
+<wsdl:message name="AddDocumentFromUrlHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="url" type="s:string"/>
+<wsdl:part name="filename" type="s:string"/>
+<wsdl:part name="externalId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="AddDocumentFromUrlHttpPostOut">
+<wsdl:part name="Body" element="tns:long"/>
+</wsdl:message>
+<wsdl:message name="AddDocumentToCallHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="callId" type="s:string"/>
+<wsdl:part name="documentId" type="s:string"/>
+<wsdl:part name="nodeCode" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="AddDocumentToCallHttpPostOut">
+<wsdl:part name="Body" element="tns:long"/>
+</wsdl:message>
+<wsdl:message name="DeleteDocumentHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="documentId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="DeleteDocumentHttpPostOut">
+<wsdl:part name="Body" element="tns:boolean"/>
+</wsdl:message>
+<wsdl:message name="GetDocumentStatusHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="documentId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetDocumentStatusHttpPostOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:message name="GetDocumentProgressHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="documentId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetDocumentProgressHttpPostOut">
+<wsdl:part name="Body" element="tns:DocumentStatusDTO"/>
+</wsdl:message>
+<wsdl:message name="VerifyUserByMailHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="mail" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="VerifyUserByMailHttpPostOut">
+<wsdl:part name="Body" element="tns:string"/>
+</wsdl:message>
+<wsdl:message name="SendMailHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="callId" type="s:string"/>
+<wsdl:part name="to" type="s:string"/>
+<wsdl:part name="templateCode" type="s:string"/>
+<wsdl:part name="attachments" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="SendMailHttpPostOut">
+<wsdl:part name="Body" element="tns:boolean"/>
+</wsdl:message>
+<wsdl:message name="GetCallHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="callId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetCallHttpPostOut">
+<wsdl:part name="Body" element="tns:CallDTO"/>
+</wsdl:message>
+<wsdl:message name="GetCallByPublicIdHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="publicId" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetCallByPublicIdHttpPostOut">
+<wsdl:part name="Body" element="tns:CallDTO"/>
+</wsdl:message>
+<wsdl:message name="GetEventsHttpPostIn">
+<wsdl:part name="token" type="s:string"/>
+<wsdl:part name="publicId" type="s:string"/>
+<wsdl:part name="eventCount" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetEventsHttpPostOut">
+<wsdl:part name="Body" element="tns:ArrayOfCallEventDTO"/>
+</wsdl:message>
+<wsdl:portType name="InsideService20Soap">
+<wsdl:operation name="Login">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Returns a security token for use with the other service functions. You'll need an API-key and a valid account. Token remains valid for 24 hours.
+</wsdl:documentation>
+<wsdl:input message="tns:LoginSoapIn"/>
+<wsdl:output message="tns:LoginSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="LoginBytoken">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Re-initialise Session object.</wsdl:documentation>
+<wsdl:input message="tns:LoginBytokenSoapIn"/>
+<wsdl:output message="tns:LoginBytokenSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetServerId">
+<wsdl:input message="tns:GetServerIdSoapIn"/>
+<wsdl:output message="tns:GetServerIdSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="SaveCredentials">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Save the login credentials in a cookie.</wsdl:documentation>
+<wsdl:input message="tns:SaveCredentialsSoapIn"/>
+<wsdl:output message="tns:SaveCredentialsSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="DeleteCredentials">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Remove the cookie with the login credentials.</wsdl:documentation>
+<wsdl:input message="tns:DeleteCredentialsSoapIn"/>
+<wsdl:output message="tns:DeleteCredentialsSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetAgentUrl">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get the Idiligo Agent url.</wsdl:documentation>
+<wsdl:input message="tns:GetAgentUrlSoapIn"/>
+<wsdl:output message="tns:GetAgentUrlSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="NavigateToAgentUrl">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Navigate to the Idiligo Agent url.</wsdl:documentation>
+<wsdl:input message="tns:NavigateToAgentUrlSoapIn"/>
+<wsdl:output message="tns:NavigateToAgentUrlSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetSesData">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get call data from its ID.</wsdl:documentation>
+<wsdl:input message="tns:GetSesDataSoapIn"/>
+<wsdl:output message="tns:GetSesDataSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="CreateUser">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Creates a new user with the specified credentials.</wsdl:documentation>
+<wsdl:input message="tns:CreateUserSoapIn"/>
+<wsdl:output message="tns:CreateUserSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="CreateContact">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Creates a new contact with the specified emailaddress.
+</wsdl:documentation>
+<wsdl:input message="tns:CreateContactSoapIn"/>
+<wsdl:output message="tns:CreateContactSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="CreateCall">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Creates a new call with the specified flow and returns its ID.
+</wsdl:documentation>
+<wsdl:input message="tns:CreateCallSoapIn"/>
+<wsdl:output message="tns:CreateCallSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="CreateCallEx">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Creates a new call with the specified document and extra data, and returns its ID.
+</wsdl:documentation>
+<wsdl:input message="tns:CreateCallExSoapIn"/>
+<wsdl:output message="tns:CreateCallExSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetCallValues">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Set values of the fields defined in the flow of the specified call.
+</wsdl:documentation>
+<wsdl:input message="tns:SetCallValuesSoapIn"/>
+<wsdl:output message="tns:SetCallValuesSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetCallValues">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Get values of the fields used in the flow of the specified call.
+</wsdl:documentation>
+<wsdl:input message="tns:GetCallValuesSoapIn"/>
+<wsdl:output message="tns:GetCallValuesSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetPublicCallId">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Returns a unique public identifier for a call to constuct the client and agent session URLs.
+</wsdl:documentation>
+<wsdl:input message="tns:GetPublicCallIdSoapIn"/>
+<wsdl:output message="tns:GetPublicCallIdSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetCallDataById">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get call data from its ID.</wsdl:documentation>
+<wsdl:input message="tns:GetCallDataByIdSoapIn"/>
+<wsdl:output message="tns:GetCallDataByIdSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetCallDataByPublicId">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get call data from its Public ID.</wsdl:documentation>
+<wsdl:input message="tns:GetCallDataByPublicIdSoapIn"/>
+<wsdl:output message="tns:GetCallDataByPublicIdSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetContact">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Set contact to the Call.</wsdl:documentation>
+<wsdl:input message="tns:SetContactSoapIn"/>
+<wsdl:output message="tns:SetContactSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetLanguage">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get language items from LanguageCode.</wsdl:documentation>
+<wsdl:input message="tns:GetLanguageSoapIn"/>
+<wsdl:output message="tns:GetLanguageSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetServerEvent">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a Server Events.</wsdl:documentation>
+<wsdl:input message="tns:GetServerEventSoapIn"/>
+<wsdl:output message="tns:GetServerEventSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetChatMessage">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a chat text from the server.</wsdl:documentation>
+<wsdl:input message="tns:GetChatMessageSoapIn"/>
+<wsdl:output message="tns:GetChatMessageSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetChatMessage">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sends a chat text to the server.</wsdl:documentation>
+<wsdl:input message="tns:SetChatMessageSoapIn"/>
+<wsdl:output message="tns:SetChatMessageSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetDocumentCursor">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Returns current cursor position over document from the server.
+</wsdl:documentation>
+<wsdl:input message="tns:GetDocumentCursorSoapIn"/>
+<wsdl:output message="tns:GetDocumentCursorSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetDocumentCursor">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Sends current cursor position over document to the server.
+</wsdl:documentation>
+<wsdl:input message="tns:SetDocumentCursorSoapIn"/>
+<wsdl:output message="tns:SetDocumentCursorSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetRedirectURL">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Redirects the client to the specified URL.</wsdl:documentation>
+<wsdl:input message="tns:SetRedirectURLSoapIn"/>
+<wsdl:output message="tns:SetRedirectURLSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetClientCommand">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns latest command state of the call.</wsdl:documentation>
+<wsdl:input message="tns:GetClientCommandSoapIn"/>
+<wsdl:output message="tns:GetClientCommandSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetShowBrowseUnload">
+<wsdl:input message="tns:SetShowBrowseUnloadSoapIn"/>
+<wsdl:output message="tns:SetShowBrowseUnloadSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetCurrentStep">
+<wsdl:input message="tns:GetCurrentStepSoapIn"/>
+<wsdl:output message="tns:GetCurrentStepSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetHomeStep">
+<wsdl:input message="tns:SetHomeStepSoapIn"/>
+<wsdl:output message="tns:SetHomeStepSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetPrevStep">
+<wsdl:input message="tns:SetPrevStepSoapIn"/>
+<wsdl:output message="tns:SetPrevStepSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetNextStep">
+<wsdl:input message="tns:SetNextStepSoapIn"/>
+<wsdl:output message="tns:SetNextStepSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="EndCall">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">End the current call.</wsdl:documentation>
+<wsdl:input message="tns:EndCallSoapIn"/>
+<wsdl:output message="tns:EndCallSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetViewer">
+<wsdl:input message="tns:SetViewerSoapIn"/>
+<wsdl:output message="tns:SetViewerSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetValue">
+<wsdl:input message="tns:SetValueSoapIn"/>
+<wsdl:output message="tns:SetValueSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetValues">
+<wsdl:input message="tns:SetValuesSoapIn"/>
+<wsdl:output message="tns:SetValuesSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetViewerWrap">
+<wsdl:input message="tns:SetViewerWrapSoapIn"/>
+<wsdl:output message="tns:SetViewerWrapSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetComment">
+<wsdl:input message="tns:SetCommentSoapIn"/>
+<wsdl:output message="tns:SetCommentSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="AddDocumentFromBytes">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Adds a document directly from a byte-array (base64Binary).
+</wsdl:documentation>
+<wsdl:input message="tns:AddDocumentFromBytesSoapIn"/>
+<wsdl:output message="tns:AddDocumentFromBytesSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="AddDocumentFromBytesEx">
+<wsdl:input message="tns:AddDocumentFromBytesExSoapIn"/>
+<wsdl:output message="tns:AddDocumentFromBytesExSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="AddDocumentFromUrl">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Adds a document from an URL. Document is downloaded and prepared for use.
+</wsdl:documentation>
+<wsdl:input message="tns:AddDocumentFromUrlSoapIn"/>
+<wsdl:output message="tns:AddDocumentFromUrlSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="AddDocumentToCall">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Adds a document at the specified node in the flow of the specified call.
+</wsdl:documentation>
+<wsdl:input message="tns:AddDocumentToCallSoapIn"/>
+<wsdl:output message="tns:AddDocumentToCallSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="DeleteDocument">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Deletes a specific document from the database.</wsdl:documentation>
+<wsdl:input message="tns:DeleteDocumentSoapIn"/>
+<wsdl:output message="tns:DeleteDocumentSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetDocumentStatus">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Gets the conversion/preparation status of a document. Returns: BUSY, READY, NOT FOUND, or ERROR.
+</wsdl:documentation>
+<wsdl:input message="tns:GetDocumentStatusSoapIn"/>
+<wsdl:output message="tns:GetDocumentStatusSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetDocumentProgress">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Gets the status and progress of a document that is being converted.
+</wsdl:documentation>
+<wsdl:input message="tns:GetDocumentProgressSoapIn"/>
+<wsdl:output message="tns:GetDocumentProgressSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="VerifyUserByMail">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Checks if a user exists and returns authentication role.
+</wsdl:documentation>
+<wsdl:input message="tns:VerifyUserByMailSoapIn"/>
+<wsdl:output message="tns:VerifyUserByMailSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="SendMail">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Sends an email to recipient with the specified options.
+</wsdl:documentation>
+<wsdl:input message="tns:SendMailSoapIn"/>
+<wsdl:output message="tns:SendMailSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetCall">
+<wsdl:input message="tns:GetCallSoapIn"/>
+<wsdl:output message="tns:GetCallSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetCallByPublicId">
+<wsdl:input message="tns:GetCallByPublicIdSoapIn"/>
+<wsdl:output message="tns:GetCallByPublicIdSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetEvents">
+<wsdl:input message="tns:GetEventsSoapIn"/>
+<wsdl:output message="tns:GetEventsSoapOut"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:portType name="InsideService20HttpGet">
+<wsdl:operation name="Login">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Returns a security token for use with the other service functions. You'll need an API-key and a valid account. Token remains valid for 24 hours.
+</wsdl:documentation>
+<wsdl:input message="tns:LoginHttpGetIn"/>
+<wsdl:output message="tns:LoginHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="LoginBytoken">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Re-initialise Session object.</wsdl:documentation>
+<wsdl:input message="tns:LoginBytokenHttpGetIn"/>
+<wsdl:output message="tns:LoginBytokenHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetServerId">
+<wsdl:input message="tns:GetServerIdHttpGetIn"/>
+<wsdl:output message="tns:GetServerIdHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="SaveCredentials">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Save the login credentials in a cookie.</wsdl:documentation>
+<wsdl:input message="tns:SaveCredentialsHttpGetIn"/>
+<wsdl:output message="tns:SaveCredentialsHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="DeleteCredentials">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Remove the cookie with the login credentials.</wsdl:documentation>
+<wsdl:input message="tns:DeleteCredentialsHttpGetIn"/>
+<wsdl:output message="tns:DeleteCredentialsHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetAgentUrl">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get the Idiligo Agent url.</wsdl:documentation>
+<wsdl:input message="tns:GetAgentUrlHttpGetIn"/>
+<wsdl:output message="tns:GetAgentUrlHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="NavigateToAgentUrl">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Navigate to the Idiligo Agent url.</wsdl:documentation>
+<wsdl:input message="tns:NavigateToAgentUrlHttpGetIn"/>
+<wsdl:output message="tns:NavigateToAgentUrlHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetSesData">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get call data from its ID.</wsdl:documentation>
+<wsdl:input message="tns:GetSesDataHttpGetIn"/>
+<wsdl:output message="tns:GetSesDataHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="CreateUser">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Creates a new user with the specified credentials.</wsdl:documentation>
+<wsdl:input message="tns:CreateUserHttpGetIn"/>
+<wsdl:output message="tns:CreateUserHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="CreateContact">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Creates a new contact with the specified emailaddress.
+</wsdl:documentation>
+<wsdl:input message="tns:CreateContactHttpGetIn"/>
+<wsdl:output message="tns:CreateContactHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="CreateCall">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Creates a new call with the specified flow and returns its ID.
+</wsdl:documentation>
+<wsdl:input message="tns:CreateCallHttpGetIn"/>
+<wsdl:output message="tns:CreateCallHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="CreateCallEx">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Creates a new call with the specified document and extra data, and returns its ID.
+</wsdl:documentation>
+<wsdl:input message="tns:CreateCallExHttpGetIn"/>
+<wsdl:output message="tns:CreateCallExHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetCallValues">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Get values of the fields used in the flow of the specified call.
+</wsdl:documentation>
+<wsdl:input message="tns:GetCallValuesHttpGetIn"/>
+<wsdl:output message="tns:GetCallValuesHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetPublicCallId">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Returns a unique public identifier for a call to constuct the client and agent session URLs.
+</wsdl:documentation>
+<wsdl:input message="tns:GetPublicCallIdHttpGetIn"/>
+<wsdl:output message="tns:GetPublicCallIdHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetCallDataById">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get call data from its ID.</wsdl:documentation>
+<wsdl:input message="tns:GetCallDataByIdHttpGetIn"/>
+<wsdl:output message="tns:GetCallDataByIdHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetCallDataByPublicId">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get call data from its Public ID.</wsdl:documentation>
+<wsdl:input message="tns:GetCallDataByPublicIdHttpGetIn"/>
+<wsdl:output message="tns:GetCallDataByPublicIdHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetContact">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Set contact to the Call.</wsdl:documentation>
+<wsdl:input message="tns:SetContactHttpGetIn"/>
+<wsdl:output message="tns:SetContactHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetLanguage">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get language items from LanguageCode.</wsdl:documentation>
+<wsdl:input message="tns:GetLanguageHttpGetIn"/>
+<wsdl:output message="tns:GetLanguageHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetServerEvent">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a Server Events.</wsdl:documentation>
+<wsdl:input message="tns:GetServerEventHttpGetIn"/>
+<wsdl:output message="tns:GetServerEventHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetChatMessage">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a chat text from the server.</wsdl:documentation>
+<wsdl:input message="tns:GetChatMessageHttpGetIn"/>
+<wsdl:output message="tns:GetChatMessageHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetChatMessage">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sends a chat text to the server.</wsdl:documentation>
+<wsdl:input message="tns:SetChatMessageHttpGetIn"/>
+<wsdl:output message="tns:SetChatMessageHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetDocumentCursor">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Returns current cursor position over document from the server.
+</wsdl:documentation>
+<wsdl:input message="tns:GetDocumentCursorHttpGetIn"/>
+<wsdl:output message="tns:GetDocumentCursorHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetDocumentCursor">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Sends current cursor position over document to the server.
+</wsdl:documentation>
+<wsdl:input message="tns:SetDocumentCursorHttpGetIn"/>
+<wsdl:output message="tns:SetDocumentCursorHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetRedirectURL">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Redirects the client to the specified URL.</wsdl:documentation>
+<wsdl:input message="tns:SetRedirectURLHttpGetIn"/>
+<wsdl:output message="tns:SetRedirectURLHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetClientCommand">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns latest command state of the call.</wsdl:documentation>
+<wsdl:input message="tns:GetClientCommandHttpGetIn"/>
+<wsdl:output message="tns:GetClientCommandHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetShowBrowseUnload">
+<wsdl:input message="tns:SetShowBrowseUnloadHttpGetIn"/>
+<wsdl:output message="tns:SetShowBrowseUnloadHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetCurrentStep">
+<wsdl:input message="tns:GetCurrentStepHttpGetIn"/>
+<wsdl:output message="tns:GetCurrentStepHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetHomeStep">
+<wsdl:input message="tns:SetHomeStepHttpGetIn"/>
+<wsdl:output message="tns:SetHomeStepHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetPrevStep">
+<wsdl:input message="tns:SetPrevStepHttpGetIn"/>
+<wsdl:output message="tns:SetPrevStepHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetNextStep">
+<wsdl:input message="tns:SetNextStepHttpGetIn"/>
+<wsdl:output message="tns:SetNextStepHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="EndCall">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">End the current call.</wsdl:documentation>
+<wsdl:input message="tns:EndCallHttpGetIn"/>
+<wsdl:output message="tns:EndCallHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetViewer">
+<wsdl:input message="tns:SetViewerHttpGetIn"/>
+<wsdl:output message="tns:SetViewerHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetValue">
+<wsdl:input message="tns:SetValueHttpGetIn"/>
+<wsdl:output message="tns:SetValueHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetValues">
+<wsdl:input message="tns:SetValuesHttpGetIn"/>
+<wsdl:output message="tns:SetValuesHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetViewerWrap">
+<wsdl:input message="tns:SetViewerWrapHttpGetIn"/>
+<wsdl:output message="tns:SetViewerWrapHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetComment">
+<wsdl:input message="tns:SetCommentHttpGetIn"/>
+<wsdl:output message="tns:SetCommentHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="AddDocumentFromBytes">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Adds a document directly from a byte-array (base64Binary).
+</wsdl:documentation>
+<wsdl:input message="tns:AddDocumentFromBytesHttpGetIn"/>
+<wsdl:output message="tns:AddDocumentFromBytesHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="AddDocumentFromBytesEx">
+<wsdl:input message="tns:AddDocumentFromBytesExHttpGetIn"/>
+<wsdl:output message="tns:AddDocumentFromBytesExHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="AddDocumentFromUrl">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Adds a document from an URL. Document is downloaded and prepared for use.
+</wsdl:documentation>
+<wsdl:input message="tns:AddDocumentFromUrlHttpGetIn"/>
+<wsdl:output message="tns:AddDocumentFromUrlHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="AddDocumentToCall">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Adds a document at the specified node in the flow of the specified call.
+</wsdl:documentation>
+<wsdl:input message="tns:AddDocumentToCallHttpGetIn"/>
+<wsdl:output message="tns:AddDocumentToCallHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="DeleteDocument">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Deletes a specific document from the database.</wsdl:documentation>
+<wsdl:input message="tns:DeleteDocumentHttpGetIn"/>
+<wsdl:output message="tns:DeleteDocumentHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetDocumentStatus">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Gets the conversion/preparation status of a document. Returns: BUSY, READY, NOT FOUND, or ERROR.
+</wsdl:documentation>
+<wsdl:input message="tns:GetDocumentStatusHttpGetIn"/>
+<wsdl:output message="tns:GetDocumentStatusHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetDocumentProgress">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Gets the status and progress of a document that is being converted.
+</wsdl:documentation>
+<wsdl:input message="tns:GetDocumentProgressHttpGetIn"/>
+<wsdl:output message="tns:GetDocumentProgressHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="VerifyUserByMail">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Checks if a user exists and returns authentication role.
+</wsdl:documentation>
+<wsdl:input message="tns:VerifyUserByMailHttpGetIn"/>
+<wsdl:output message="tns:VerifyUserByMailHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="SendMail">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Sends an email to recipient with the specified options.
+</wsdl:documentation>
+<wsdl:input message="tns:SendMailHttpGetIn"/>
+<wsdl:output message="tns:SendMailHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetCall">
+<wsdl:input message="tns:GetCallHttpGetIn"/>
+<wsdl:output message="tns:GetCallHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetCallByPublicId">
+<wsdl:input message="tns:GetCallByPublicIdHttpGetIn"/>
+<wsdl:output message="tns:GetCallByPublicIdHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetEvents">
+<wsdl:input message="tns:GetEventsHttpGetIn"/>
+<wsdl:output message="tns:GetEventsHttpGetOut"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:portType name="InsideService20HttpPost">
+<wsdl:operation name="Login">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Returns a security token for use with the other service functions. You'll need an API-key and a valid account. Token remains valid for 24 hours.
+</wsdl:documentation>
+<wsdl:input message="tns:LoginHttpPostIn"/>
+<wsdl:output message="tns:LoginHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="LoginBytoken">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Re-initialise Session object.</wsdl:documentation>
+<wsdl:input message="tns:LoginBytokenHttpPostIn"/>
+<wsdl:output message="tns:LoginBytokenHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetServerId">
+<wsdl:input message="tns:GetServerIdHttpPostIn"/>
+<wsdl:output message="tns:GetServerIdHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="SaveCredentials">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Save the login credentials in a cookie.</wsdl:documentation>
+<wsdl:input message="tns:SaveCredentialsHttpPostIn"/>
+<wsdl:output message="tns:SaveCredentialsHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="DeleteCredentials">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Remove the cookie with the login credentials.</wsdl:documentation>
+<wsdl:input message="tns:DeleteCredentialsHttpPostIn"/>
+<wsdl:output message="tns:DeleteCredentialsHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetAgentUrl">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get the Idiligo Agent url.</wsdl:documentation>
+<wsdl:input message="tns:GetAgentUrlHttpPostIn"/>
+<wsdl:output message="tns:GetAgentUrlHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="NavigateToAgentUrl">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Navigate to the Idiligo Agent url.</wsdl:documentation>
+<wsdl:input message="tns:NavigateToAgentUrlHttpPostIn"/>
+<wsdl:output message="tns:NavigateToAgentUrlHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetSesData">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get call data from its ID.</wsdl:documentation>
+<wsdl:input message="tns:GetSesDataHttpPostIn"/>
+<wsdl:output message="tns:GetSesDataHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="CreateUser">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Creates a new user with the specified credentials.</wsdl:documentation>
+<wsdl:input message="tns:CreateUserHttpPostIn"/>
+<wsdl:output message="tns:CreateUserHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="CreateContact">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Creates a new contact with the specified emailaddress.
+</wsdl:documentation>
+<wsdl:input message="tns:CreateContactHttpPostIn"/>
+<wsdl:output message="tns:CreateContactHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="CreateCall">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Creates a new call with the specified flow and returns its ID.
+</wsdl:documentation>
+<wsdl:input message="tns:CreateCallHttpPostIn"/>
+<wsdl:output message="tns:CreateCallHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="CreateCallEx">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Creates a new call with the specified document and extra data, and returns its ID.
+</wsdl:documentation>
+<wsdl:input message="tns:CreateCallExHttpPostIn"/>
+<wsdl:output message="tns:CreateCallExHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetCallValues">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Get values of the fields used in the flow of the specified call.
+</wsdl:documentation>
+<wsdl:input message="tns:GetCallValuesHttpPostIn"/>
+<wsdl:output message="tns:GetCallValuesHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetPublicCallId">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Returns a unique public identifier for a call to constuct the client and agent session URLs.
+</wsdl:documentation>
+<wsdl:input message="tns:GetPublicCallIdHttpPostIn"/>
+<wsdl:output message="tns:GetPublicCallIdHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetCallDataById">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get call data from its ID.</wsdl:documentation>
+<wsdl:input message="tns:GetCallDataByIdHttpPostIn"/>
+<wsdl:output message="tns:GetCallDataByIdHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetCallDataByPublicId">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get call data from its Public ID.</wsdl:documentation>
+<wsdl:input message="tns:GetCallDataByPublicIdHttpPostIn"/>
+<wsdl:output message="tns:GetCallDataByPublicIdHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetContact">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Set contact to the Call.</wsdl:documentation>
+<wsdl:input message="tns:SetContactHttpPostIn"/>
+<wsdl:output message="tns:SetContactHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetLanguage">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get language items from LanguageCode.</wsdl:documentation>
+<wsdl:input message="tns:GetLanguageHttpPostIn"/>
+<wsdl:output message="tns:GetLanguageHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetServerEvent">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a Server Events.</wsdl:documentation>
+<wsdl:input message="tns:GetServerEventHttpPostIn"/>
+<wsdl:output message="tns:GetServerEventHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetChatMessage">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a chat text from the server.</wsdl:documentation>
+<wsdl:input message="tns:GetChatMessageHttpPostIn"/>
+<wsdl:output message="tns:GetChatMessageHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetChatMessage">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sends a chat text to the server.</wsdl:documentation>
+<wsdl:input message="tns:SetChatMessageHttpPostIn"/>
+<wsdl:output message="tns:SetChatMessageHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetDocumentCursor">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Returns current cursor position over document from the server.
+</wsdl:documentation>
+<wsdl:input message="tns:GetDocumentCursorHttpPostIn"/>
+<wsdl:output message="tns:GetDocumentCursorHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetDocumentCursor">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Sends current cursor position over document to the server.
+</wsdl:documentation>
+<wsdl:input message="tns:SetDocumentCursorHttpPostIn"/>
+<wsdl:output message="tns:SetDocumentCursorHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetRedirectURL">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Redirects the client to the specified URL.</wsdl:documentation>
+<wsdl:input message="tns:SetRedirectURLHttpPostIn"/>
+<wsdl:output message="tns:SetRedirectURLHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetClientCommand">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns latest command state of the call.</wsdl:documentation>
+<wsdl:input message="tns:GetClientCommandHttpPostIn"/>
+<wsdl:output message="tns:GetClientCommandHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetShowBrowseUnload">
+<wsdl:input message="tns:SetShowBrowseUnloadHttpPostIn"/>
+<wsdl:output message="tns:SetShowBrowseUnloadHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetCurrentStep">
+<wsdl:input message="tns:GetCurrentStepHttpPostIn"/>
+<wsdl:output message="tns:GetCurrentStepHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetHomeStep">
+<wsdl:input message="tns:SetHomeStepHttpPostIn"/>
+<wsdl:output message="tns:SetHomeStepHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetPrevStep">
+<wsdl:input message="tns:SetPrevStepHttpPostIn"/>
+<wsdl:output message="tns:SetPrevStepHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetNextStep">
+<wsdl:input message="tns:SetNextStepHttpPostIn"/>
+<wsdl:output message="tns:SetNextStepHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="EndCall">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">End the current call.</wsdl:documentation>
+<wsdl:input message="tns:EndCallHttpPostIn"/>
+<wsdl:output message="tns:EndCallHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetViewer">
+<wsdl:input message="tns:SetViewerHttpPostIn"/>
+<wsdl:output message="tns:SetViewerHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetValue">
+<wsdl:input message="tns:SetValueHttpPostIn"/>
+<wsdl:output message="tns:SetValueHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetValues">
+<wsdl:input message="tns:SetValuesHttpPostIn"/>
+<wsdl:output message="tns:SetValuesHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetViewerWrap">
+<wsdl:input message="tns:SetViewerWrapHttpPostIn"/>
+<wsdl:output message="tns:SetViewerWrapHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="SetComment">
+<wsdl:input message="tns:SetCommentHttpPostIn"/>
+<wsdl:output message="tns:SetCommentHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="AddDocumentFromBytes">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Adds a document directly from a byte-array (base64Binary).
+</wsdl:documentation>
+<wsdl:input message="tns:AddDocumentFromBytesHttpPostIn"/>
+<wsdl:output message="tns:AddDocumentFromBytesHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="AddDocumentFromBytesEx">
+<wsdl:input message="tns:AddDocumentFromBytesExHttpPostIn"/>
+<wsdl:output message="tns:AddDocumentFromBytesExHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="AddDocumentFromUrl">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Adds a document from an URL. Document is downloaded and prepared for use.
+</wsdl:documentation>
+<wsdl:input message="tns:AddDocumentFromUrlHttpPostIn"/>
+<wsdl:output message="tns:AddDocumentFromUrlHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="AddDocumentToCall">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Adds a document at the specified node in the flow of the specified call.
+</wsdl:documentation>
+<wsdl:input message="tns:AddDocumentToCallHttpPostIn"/>
+<wsdl:output message="tns:AddDocumentToCallHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="DeleteDocument">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Deletes a specific document from the database.</wsdl:documentation>
+<wsdl:input message="tns:DeleteDocumentHttpPostIn"/>
+<wsdl:output message="tns:DeleteDocumentHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetDocumentStatus">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Gets the conversion/preparation status of a document. Returns: BUSY, READY, NOT FOUND, or ERROR.
+</wsdl:documentation>
+<wsdl:input message="tns:GetDocumentStatusHttpPostIn"/>
+<wsdl:output message="tns:GetDocumentStatusHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetDocumentProgress">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Gets the status and progress of a document that is being converted.
+</wsdl:documentation>
+<wsdl:input message="tns:GetDocumentProgressHttpPostIn"/>
+<wsdl:output message="tns:GetDocumentProgressHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="VerifyUserByMail">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Checks if a user exists and returns authentication role.
+</wsdl:documentation>
+<wsdl:input message="tns:VerifyUserByMailHttpPostIn"/>
+<wsdl:output message="tns:VerifyUserByMailHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="SendMail">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Sends an email to recipient with the specified options.
+</wsdl:documentation>
+<wsdl:input message="tns:SendMailHttpPostIn"/>
+<wsdl:output message="tns:SendMailHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetCall">
+<wsdl:input message="tns:GetCallHttpPostIn"/>
+<wsdl:output message="tns:GetCallHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetCallByPublicId">
+<wsdl:input message="tns:GetCallByPublicIdHttpPostIn"/>
+<wsdl:output message="tns:GetCallByPublicIdHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetEvents">
+<wsdl:input message="tns:GetEventsHttpPostIn"/>
+<wsdl:output message="tns:GetEventsHttpPostOut"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="InsideService20Soap" type="tns:InsideService20Soap">
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="Login">
+<soap:operation soapAction="http://www.idiligo.com/Login" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="LoginBytoken">
+<soap:operation soapAction="http://www.idiligo.com/LoginBytoken" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetServerId">
+<soap:operation soapAction="http://www.idiligo.com/GetServerId" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SaveCredentials">
+<soap:operation soapAction="http://www.idiligo.com/SaveCredentials" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="DeleteCredentials">
+<soap:operation soapAction="http://www.idiligo.com/DeleteCredentials" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetAgentUrl">
+<soap:operation soapAction="http://www.idiligo.com/GetAgentUrl" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="NavigateToAgentUrl">
+<soap:operation soapAction="http://www.idiligo.com/NavigateToAgentUrl" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetSesData">
+<soap:operation soapAction="http://www.idiligo.com/GetSesData" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="CreateUser">
+<soap:operation soapAction="http://www.idiligo.com/CreateUser" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="CreateContact">
+<soap:operation soapAction="http://www.idiligo.com/CreateContact" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="CreateCall">
+<soap:operation soapAction="http://www.idiligo.com/CreateCall" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="CreateCallEx">
+<soap:operation soapAction="http://www.idiligo.com/CreateCallEx" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetCallValues">
+<soap:operation soapAction="http://www.idiligo.com/SetCallValues" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetCallValues">
+<soap:operation soapAction="http://www.idiligo.com/GetCallValues" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetPublicCallId">
+<soap:operation soapAction="http://www.idiligo.com/GetPublicCallId" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetCallDataById">
+<soap:operation soapAction="http://www.idiligo.com/GetCallDataById" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetCallDataByPublicId">
+<soap:operation soapAction="http://www.idiligo.com/GetCallDataByPublicId" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetContact">
+<soap:operation soapAction="http://www.idiligo.com/SetContact" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetLanguage">
+<soap:operation soapAction="http://www.idiligo.com/GetLanguage" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetServerEvent">
+<soap:operation soapAction="http://www.idiligo.com/GetServerEvent" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetChatMessage">
+<soap:operation soapAction="http://www.idiligo.com/GetChatMessage" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetChatMessage">
+<soap:operation soapAction="http://www.idiligo.com/SetChatMessage" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetDocumentCursor">
+<soap:operation soapAction="http://www.idiligo.com/GetDocumentCursor" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetDocumentCursor">
+<soap:operation soapAction="http://www.idiligo.com/SetDocumentCursor" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetRedirectURL">
+<soap:operation soapAction="http://www.idiligo.com/SetRedirectURL" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetClientCommand">
+<soap:operation soapAction="http://www.idiligo.com/GetClientCommand" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetShowBrowseUnload">
+<soap:operation soapAction="http://www.idiligo.com/SetShowBrowseUnload" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetCurrentStep">
+<soap:operation soapAction="http://www.idiligo.com/GetCurrentStep" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetHomeStep">
+<soap:operation soapAction="http://www.idiligo.com/SetHomeStep" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetPrevStep">
+<soap:operation soapAction="http://www.idiligo.com/SetPrevStep" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetNextStep">
+<soap:operation soapAction="http://www.idiligo.com/SetNextStep" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="EndCall">
+<soap:operation soapAction="http://www.idiligo.com/EndCall" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetViewer">
+<soap:operation soapAction="http://www.idiligo.com/SetViewer" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetValue">
+<soap:operation soapAction="http://www.idiligo.com/SetValue" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetValues">
+<soap:operation soapAction="http://www.idiligo.com/SetValues" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetViewerWrap">
+<soap:operation soapAction="http://www.idiligo.com/SetViewerWrap" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetComment">
+<soap:operation soapAction="http://www.idiligo.com/SetComment" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="AddDocumentFromBytes">
+<soap:operation soapAction="http://www.idiligo.com/AddDocumentFromBytes" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="AddDocumentFromBytesEx">
+<soap:operation soapAction="http://www.idiligo.com/AddDocumentFromBytesEx" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="AddDocumentFromUrl">
+<soap:operation soapAction="http://www.idiligo.com/AddDocumentFromUrl" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="AddDocumentToCall">
+<soap:operation soapAction="http://www.idiligo.com/AddDocumentToCall" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="DeleteDocument">
+<soap:operation soapAction="http://www.idiligo.com/DeleteDocument" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetDocumentStatus">
+<soap:operation soapAction="http://www.idiligo.com/GetDocumentStatus" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetDocumentProgress">
+<soap:operation soapAction="http://www.idiligo.com/GetDocumentProgress" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="VerifyUserByMail">
+<soap:operation soapAction="http://www.idiligo.com/VerifyUserByMail" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SendMail">
+<soap:operation soapAction="http://www.idiligo.com/SendMail" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetCall">
+<soap:operation soapAction="http://www.idiligo.com/GetCall" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetCallByPublicId">
+<soap:operation soapAction="http://www.idiligo.com/GetCallByPublicId" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetEvents">
+<soap:operation soapAction="http://www.idiligo.com/GetEvents" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:binding name="InsideService20Soap12" type="tns:InsideService20Soap">
+<soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="Login">
+<soap12:operation soapAction="http://www.idiligo.com/Login" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="LoginBytoken">
+<soap12:operation soapAction="http://www.idiligo.com/LoginBytoken" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetServerId">
+<soap12:operation soapAction="http://www.idiligo.com/GetServerId" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SaveCredentials">
+<soap12:operation soapAction="http://www.idiligo.com/SaveCredentials" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="DeleteCredentials">
+<soap12:operation soapAction="http://www.idiligo.com/DeleteCredentials" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetAgentUrl">
+<soap12:operation soapAction="http://www.idiligo.com/GetAgentUrl" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="NavigateToAgentUrl">
+<soap12:operation soapAction="http://www.idiligo.com/NavigateToAgentUrl" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetSesData">
+<soap12:operation soapAction="http://www.idiligo.com/GetSesData" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="CreateUser">
+<soap12:operation soapAction="http://www.idiligo.com/CreateUser" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="CreateContact">
+<soap12:operation soapAction="http://www.idiligo.com/CreateContact" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="CreateCall">
+<soap12:operation soapAction="http://www.idiligo.com/CreateCall" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="CreateCallEx">
+<soap12:operation soapAction="http://www.idiligo.com/CreateCallEx" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetCallValues">
+<soap12:operation soapAction="http://www.idiligo.com/SetCallValues" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetCallValues">
+<soap12:operation soapAction="http://www.idiligo.com/GetCallValues" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetPublicCallId">
+<soap12:operation soapAction="http://www.idiligo.com/GetPublicCallId" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetCallDataById">
+<soap12:operation soapAction="http://www.idiligo.com/GetCallDataById" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetCallDataByPublicId">
+<soap12:operation soapAction="http://www.idiligo.com/GetCallDataByPublicId" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetContact">
+<soap12:operation soapAction="http://www.idiligo.com/SetContact" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetLanguage">
+<soap12:operation soapAction="http://www.idiligo.com/GetLanguage" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetServerEvent">
+<soap12:operation soapAction="http://www.idiligo.com/GetServerEvent" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetChatMessage">
+<soap12:operation soapAction="http://www.idiligo.com/GetChatMessage" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetChatMessage">
+<soap12:operation soapAction="http://www.idiligo.com/SetChatMessage" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetDocumentCursor">
+<soap12:operation soapAction="http://www.idiligo.com/GetDocumentCursor" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetDocumentCursor">
+<soap12:operation soapAction="http://www.idiligo.com/SetDocumentCursor" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetRedirectURL">
+<soap12:operation soapAction="http://www.idiligo.com/SetRedirectURL" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetClientCommand">
+<soap12:operation soapAction="http://www.idiligo.com/GetClientCommand" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetShowBrowseUnload">
+<soap12:operation soapAction="http://www.idiligo.com/SetShowBrowseUnload" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetCurrentStep">
+<soap12:operation soapAction="http://www.idiligo.com/GetCurrentStep" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetHomeStep">
+<soap12:operation soapAction="http://www.idiligo.com/SetHomeStep" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetPrevStep">
+<soap12:operation soapAction="http://www.idiligo.com/SetPrevStep" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetNextStep">
+<soap12:operation soapAction="http://www.idiligo.com/SetNextStep" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="EndCall">
+<soap12:operation soapAction="http://www.idiligo.com/EndCall" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetViewer">
+<soap12:operation soapAction="http://www.idiligo.com/SetViewer" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetValue">
+<soap12:operation soapAction="http://www.idiligo.com/SetValue" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetValues">
+<soap12:operation soapAction="http://www.idiligo.com/SetValues" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetViewerWrap">
+<soap12:operation soapAction="http://www.idiligo.com/SetViewerWrap" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetComment">
+<soap12:operation soapAction="http://www.idiligo.com/SetComment" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="AddDocumentFromBytes">
+<soap12:operation soapAction="http://www.idiligo.com/AddDocumentFromBytes" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="AddDocumentFromBytesEx">
+<soap12:operation soapAction="http://www.idiligo.com/AddDocumentFromBytesEx" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="AddDocumentFromUrl">
+<soap12:operation soapAction="http://www.idiligo.com/AddDocumentFromUrl" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="AddDocumentToCall">
+<soap12:operation soapAction="http://www.idiligo.com/AddDocumentToCall" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="DeleteDocument">
+<soap12:operation soapAction="http://www.idiligo.com/DeleteDocument" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetDocumentStatus">
+<soap12:operation soapAction="http://www.idiligo.com/GetDocumentStatus" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetDocumentProgress">
+<soap12:operation soapAction="http://www.idiligo.com/GetDocumentProgress" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="VerifyUserByMail">
+<soap12:operation soapAction="http://www.idiligo.com/VerifyUserByMail" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SendMail">
+<soap12:operation soapAction="http://www.idiligo.com/SendMail" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetCall">
+<soap12:operation soapAction="http://www.idiligo.com/GetCall" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetCallByPublicId">
+<soap12:operation soapAction="http://www.idiligo.com/GetCallByPublicId" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetEvents">
+<soap12:operation soapAction="http://www.idiligo.com/GetEvents" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:binding name="InsideService20HttpGet" type="tns:InsideService20HttpGet">
+<http:binding verb="GET"/>
+<wsdl:operation name="Login">
+<http:operation location="/Login"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="LoginBytoken">
+<http:operation location="/LoginBytoken"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetServerId">
+<http:operation location="/GetServerId"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SaveCredentials">
+<http:operation location="/SaveCredentials"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output/>
+</wsdl:operation>
+<wsdl:operation name="DeleteCredentials">
+<http:operation location="/DeleteCredentials"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output/>
+</wsdl:operation>
+<wsdl:operation name="GetAgentUrl">
+<http:operation location="/GetAgentUrl"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="NavigateToAgentUrl">
+<http:operation location="/NavigateToAgentUrl"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output/>
+</wsdl:operation>
+<wsdl:operation name="GetSesData">
+<http:operation location="/GetSesData"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="CreateUser">
+<http:operation location="/CreateUser"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="CreateContact">
+<http:operation location="/CreateContact"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="CreateCall">
+<http:operation location="/CreateCall"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="CreateCallEx">
+<http:operation location="/CreateCallEx"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetCallValues">
+<http:operation location="/GetCallValues"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetPublicCallId">
+<http:operation location="/GetPublicCallId"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetCallDataById">
+<http:operation location="/GetCallDataById"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetCallDataByPublicId">
+<http:operation location="/GetCallDataByPublicId"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetContact">
+<http:operation location="/SetContact"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output/>
+</wsdl:operation>
+<wsdl:operation name="GetLanguage">
+<http:operation location="/GetLanguage"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output/>
+</wsdl:operation>
+<wsdl:operation name="GetServerEvent">
+<http:operation location="/GetServerEvent"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetChatMessage">
+<http:operation location="/GetChatMessage"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetChatMessage">
+<http:operation location="/SetChatMessage"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetDocumentCursor">
+<http:operation location="/GetDocumentCursor"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetDocumentCursor">
+<http:operation location="/SetDocumentCursor"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetRedirectURL">
+<http:operation location="/SetRedirectURL"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetClientCommand">
+<http:operation location="/GetClientCommand"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetShowBrowseUnload">
+<http:operation location="/SetShowBrowseUnload"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output/>
+</wsdl:operation>
+<wsdl:operation name="GetCurrentStep">
+<http:operation location="/GetCurrentStep"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetHomeStep">
+<http:operation location="/SetHomeStep"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetPrevStep">
+<http:operation location="/SetPrevStep"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetNextStep">
+<http:operation location="/SetNextStep"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="EndCall">
+<http:operation location="/EndCall"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetViewer">
+<http:operation location="/SetViewer"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetValue">
+<http:operation location="/SetValue"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output/>
+</wsdl:operation>
+<wsdl:operation name="SetValues">
+<http:operation location="/SetValues"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output/>
+</wsdl:operation>
+<wsdl:operation name="SetViewerWrap">
+<http:operation location="/SetViewerWrap"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetComment">
+<http:operation location="/SetComment"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output/>
+</wsdl:operation>
+<wsdl:operation name="AddDocumentFromBytes">
+<http:operation location="/AddDocumentFromBytes"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="AddDocumentFromBytesEx">
+<http:operation location="/AddDocumentFromBytesEx"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="AddDocumentFromUrl">
+<http:operation location="/AddDocumentFromUrl"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="AddDocumentToCall">
+<http:operation location="/AddDocumentToCall"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="DeleteDocument">
+<http:operation location="/DeleteDocument"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetDocumentStatus">
+<http:operation location="/GetDocumentStatus"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetDocumentProgress">
+<http:operation location="/GetDocumentProgress"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="VerifyUserByMail">
+<http:operation location="/VerifyUserByMail"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SendMail">
+<http:operation location="/SendMail"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetCall">
+<http:operation location="/GetCall"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetCallByPublicId">
+<http:operation location="/GetCallByPublicId"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetEvents">
+<http:operation location="/GetEvents"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:binding name="InsideService20HttpPost" type="tns:InsideService20HttpPost">
+<http:binding verb="POST"/>
+<wsdl:operation name="Login">
+<http:operation location="/Login"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="LoginBytoken">
+<http:operation location="/LoginBytoken"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetServerId">
+<http:operation location="/GetServerId"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SaveCredentials">
+<http:operation location="/SaveCredentials"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output/>
+</wsdl:operation>
+<wsdl:operation name="DeleteCredentials">
+<http:operation location="/DeleteCredentials"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output/>
+</wsdl:operation>
+<wsdl:operation name="GetAgentUrl">
+<http:operation location="/GetAgentUrl"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="NavigateToAgentUrl">
+<http:operation location="/NavigateToAgentUrl"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output/>
+</wsdl:operation>
+<wsdl:operation name="GetSesData">
+<http:operation location="/GetSesData"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="CreateUser">
+<http:operation location="/CreateUser"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="CreateContact">
+<http:operation location="/CreateContact"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="CreateCall">
+<http:operation location="/CreateCall"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="CreateCallEx">
+<http:operation location="/CreateCallEx"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetCallValues">
+<http:operation location="/GetCallValues"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetPublicCallId">
+<http:operation location="/GetPublicCallId"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetCallDataById">
+<http:operation location="/GetCallDataById"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetCallDataByPublicId">
+<http:operation location="/GetCallDataByPublicId"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetContact">
+<http:operation location="/SetContact"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output/>
+</wsdl:operation>
+<wsdl:operation name="GetLanguage">
+<http:operation location="/GetLanguage"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output/>
+</wsdl:operation>
+<wsdl:operation name="GetServerEvent">
+<http:operation location="/GetServerEvent"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetChatMessage">
+<http:operation location="/GetChatMessage"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetChatMessage">
+<http:operation location="/SetChatMessage"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetDocumentCursor">
+<http:operation location="/GetDocumentCursor"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetDocumentCursor">
+<http:operation location="/SetDocumentCursor"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetRedirectURL">
+<http:operation location="/SetRedirectURL"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetClientCommand">
+<http:operation location="/GetClientCommand"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetShowBrowseUnload">
+<http:operation location="/SetShowBrowseUnload"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output/>
+</wsdl:operation>
+<wsdl:operation name="GetCurrentStep">
+<http:operation location="/GetCurrentStep"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetHomeStep">
+<http:operation location="/SetHomeStep"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetPrevStep">
+<http:operation location="/SetPrevStep"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetNextStep">
+<http:operation location="/SetNextStep"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="EndCall">
+<http:operation location="/EndCall"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetViewer">
+<http:operation location="/SetViewer"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetValue">
+<http:operation location="/SetValue"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output/>
+</wsdl:operation>
+<wsdl:operation name="SetValues">
+<http:operation location="/SetValues"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output/>
+</wsdl:operation>
+<wsdl:operation name="SetViewerWrap">
+<http:operation location="/SetViewerWrap"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetComment">
+<http:operation location="/SetComment"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output/>
+</wsdl:operation>
+<wsdl:operation name="AddDocumentFromBytes">
+<http:operation location="/AddDocumentFromBytes"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="AddDocumentFromBytesEx">
+<http:operation location="/AddDocumentFromBytesEx"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="AddDocumentFromUrl">
+<http:operation location="/AddDocumentFromUrl"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="AddDocumentToCall">
+<http:operation location="/AddDocumentToCall"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="DeleteDocument">
+<http:operation location="/DeleteDocument"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetDocumentStatus">
+<http:operation location="/GetDocumentStatus"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetDocumentProgress">
+<http:operation location="/GetDocumentProgress"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="VerifyUserByMail">
+<http:operation location="/VerifyUserByMail"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SendMail">
+<http:operation location="/SendMail"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetCall">
+<http:operation location="/GetCall"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetCallByPublicId">
+<http:operation location="/GetCallByPublicId"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetEvents">
+<http:operation location="/GetEvents"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="InsideService20">
+<wsdl:port name="InsideService20Soap" binding="tns:InsideService20Soap">
+<soap:address location="https://app.idiligo.com/insideservice20.asmx"/>
+</wsdl:port>
+<wsdl:port name="InsideService20Soap12" binding="tns:InsideService20Soap12">
+<soap12:address location="https://app.idiligo.com/insideservice20.asmx"/>
+</wsdl:port>
+<wsdl:port name="InsideService20HttpGet" binding="tns:InsideService20HttpGet">
+<http:address location="https://app.idiligo.com/insideservice20.asmx"/>
+</wsdl:port>
+<wsdl:port name="InsideService20HttpPost" binding="tns:InsideService20HttpPost">
+<http:address location="https://app.idiligo.com/insideservice20.asmx"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>
